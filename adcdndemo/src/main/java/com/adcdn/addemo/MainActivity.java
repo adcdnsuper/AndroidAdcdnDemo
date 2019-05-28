@@ -12,6 +12,8 @@ import com.yunxia.addemo.R;
 import com.adcdn.addemo.interstitial.InterstitialActivity;
 import com.yunxia.adsdk.tpadmobsdk.ad.constant.InformationAdType;
 
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
