@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvBanner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="横幅广告" />
+
+        <TextView
+            android:id="@+id/tvSplash"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="开屏广告" />
+
+        <TextView
+            android:id="@+id/tvInsert"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="插屏广告" />
+
+        <TextView
+            android:id="@+id/tvInformation"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="信息流广告" />
+
+        <TextView
+            android:id="@+id/tvInformationImageOnly"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="图片信息流"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvInformationRightImage"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="右图左文"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvInformationLeftImage"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="左图右文"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvInformationBottomImage"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="上图下文"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvInformationvertric"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="竖图"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvVideo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="激励视频广告" />
+
+    </LinearLayout>
+</RelativeLayout>

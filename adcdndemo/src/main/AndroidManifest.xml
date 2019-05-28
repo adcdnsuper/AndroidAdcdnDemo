@@ -1,0 +1,112 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yunxia.addemo">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:name="com.adcdn.addemo.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icn"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
+        <activity
+            android:name="com.adcdn.addemo.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.adcdn.addemo.splash.SplashActivity2"
+            android:screenOrientation="portrait"
+            android:theme="@style/splash" />
+        <activity
+            android:name="com.adcdn.addemo.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.adcdn.addemo.banner.BannerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.adcdn.addemo.interstitial.InterstitialActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.adcdn.addemo.information.InformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.adcdn.addemo.information.InformationImageOnlyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.adcdn.addemo.video.VideoActivity"
+            android:screenOrientation="portrait" />
+        <!--<provider-->
+        <!--android:name="android.support.v4.content.FileProvider"-->
+        <!--android:authorities="${applicationId}.fileprovider"-->
+        <!--android:exported="false"-->
+        <!--android:grantUriPermissions="true">-->
+        <!--<meta-data-->
+        <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+        <!--android:resource="@xml/tpad_download_paths" />-->
+        <!--</provider>-->
+        <!-- 如果targetSdkVersion设置值>=24，则强烈建议添加以下provider，否则会影响app变现 -->
+        <!-- android:authorities="${applicationId}.bd.providerasd" authorities中${packageName}部分必须替换成app自己的包名 -->
+
+        <!--腾讯FileProvider-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/adcdn_file_paths" />
+        </provider>
+        <!--百度FileProvider-->
+        <!--<provider-->
+            <!--android:name="com.baidu.mobads.openad.FileProvider"-->
+            <!--android:authorities="${applicationId}.bd.provider"-->
+            <!--android:exported="false"-->
+            <!--android:grantUriPermissions="true">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+                <!--android:resource="@xml/adcdn_file_paths" />-->
+        <!--</provider>-->
+        <!--头条FileProvider-->
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+            android:authorities="${applicationId}.TTFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/adcdn_file_paths" />
+        </provider>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>
