@@ -19,17 +19,16 @@ android {
    ....
    //2.添加依赖包
      //必须的依赖包
- compile(name:	'adcdn-release',	ext:	'aar')
+ implementation(name:	'adcdn-1.0.0',	ext:	'aar')
+ implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
  //根据APP需要添加的依赖包
  //广点通
- compile(name:	'gdt-release',	ext:	'aar') 
+ implementation(name:	'gdt-release',	ext:	'aar')
  //头条需要添加以下三个依赖包
- compile(name:	'toutiao-release',	ext:	'aar')
- compile(name:	'open_ad_sdk',	ext:	'aar')
+ implementation(name:	'toutiao-release',	ext:	'aar')
+ implementation(name:	'open_ad_sdk',	ext:	'aar')
 
- //百度
- implementation(name: 'Baidu_MobAds_SDK-release', ext: 'aar')
 
 ```
 **注意事项
@@ -350,16 +349,6 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 
 -keep class com.android.**{*;}
 
--keep class cn.async.admobhttp.**{	*;	}
-
--keep class com.jaredrummler.android.processes.**{*;}
-
--keep class com.jaredrummler.android.processes.models.**{*;}
-
--dontwarn org.apache.commons.**
-
--keep class org.apache.**{	*;	}
-
 #腾讯广点通sdk
 
 -keep class com.qq.e.**	{public protected *;}
@@ -372,17 +361,6 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 
 -keep class com.tencent.**	{*;}
 
-#百度sdk
-
--keepclassmembers class * extends android.app.Activity	{
-public void *(android.view.View);}
-
--keepclassmembers enum *	{
-public static **[]	values();
-public static ** valueOf(java.lang.String);
-		}
-
--keep class com.baidu.mobads.*.**{*;}
 
 #头条 穿山甲 sdk
 

@@ -61,17 +61,6 @@
         <activity
             android:name="com.adcdn.addemo.video.VideoActivity"
             android:screenOrientation="portrait" />
-        <!--<provider-->
-        <!--android:name="android.support.v4.content.FileProvider"-->
-        <!--android:authorities="${applicationId}.fileprovider"-->
-        <!--android:exported="false"-->
-        <!--android:grantUriPermissions="true">-->
-        <!--<meta-data-->
-        <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
-        <!--android:resource="@xml/tpad_download_paths" />-->
-        <!--</provider>-->
-        <!-- 如果targetSdkVersion设置值>=24，则强烈建议添加以下provider，否则会影响app变现 -->
-        <!-- android:authorities="${applicationId}.bd.providerasd" authorities中${packageName}部分必须替换成app自己的包名 -->
 
         <!--腾讯FileProvider-->
         <provider
@@ -83,16 +72,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/adcdn_file_paths" />
         </provider>
-        <!--百度FileProvider-->
-        <!--<provider-->
-            <!--android:name="com.baidu.mobads.openad.FileProvider"-->
-            <!--android:authorities="${applicationId}.bd.provider"-->
-            <!--android:exported="false"-->
-            <!--android:grantUriPermissions="true">-->
-            <!--<meta-data-->
-                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
-                <!--android:resource="@xml/adcdn_file_paths" />-->
-        <!--</provider>-->
         <!--头条FileProvider-->
         <provider
             android:name="com.bytedance.sdk.openadsdk.TTFileProvider"

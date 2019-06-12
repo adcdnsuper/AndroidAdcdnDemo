@@ -136,17 +136,6 @@ public class SplashActivity2 extends AppCompatActivity{
         return super.onKeyDown(keyCode, event);
     }
 
-    private void checkJump() {
-        if (needJumpMain && readyJump) {
-            jumpMain();
-        }
-    }
-
-    public void jumpMain() {
-        needJumpMain = false;
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
-    }
 
     public static void jumpHere(Context context) {
         context.startActivity(new Intent(context, SplashActivity2.class));
