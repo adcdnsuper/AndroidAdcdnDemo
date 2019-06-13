@@ -19,7 +19,7 @@ android {
    ....
    //2.添加依赖包
      //必须的依赖包
- implementation(name:	'adcdn-1.0.0',	ext:	'aar')
+ implementation(name:	'adcdnsdk-1.0',	ext:	'aar')
  implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
  //根据APP需要添加的依赖包
@@ -28,6 +28,9 @@ android {
  //头条需要添加以下三个依赖包
  implementation(name:	'toutiao-release',	ext:	'aar')
  implementation(name:	'open_ad_sdk',	ext:	'aar')
+  //adview需要添加以下依赖包
+  implementation(name:	'toutiao-release',	ext:	'aar')
+  implementation(name:	'adview-release',	ext:	'aar')
 
 
 ```
@@ -341,34 +344,55 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ## 6. 混淆配置
 广告sdk内部混淆，若您项目需要进行混淆则需要在混淆文件中添加以下配置
 
+
 -dontwarn com.yunxia.adsdk.**
-
 -keep class com.yunxia.adsdk.**{*;}
-
 -keep interface com.yunxia.adsdk.**{*;}
-
 -keep class com.android.**{*;}
+-keep class com.yunxia.adsdk.admobhttp.**{	*;	}
+-keep class com.jaredrummler.android.processes.**{*;}
+-keep class com.jaredrummler.android.processes.models.**{*;}
+-dontwarn org.apache.commons.**
+-keep class org.apache.**{	*;	}
+-ignorewarnings
+-dontnote android.net.http.*
+-dontnote org.apache.commons.codec.**
+-dontnote org.apache.http.**
 
-#腾讯广点通sdk
+# webview + js
+-keepattributes *JavascriptInterface*
+-keepattributes *Annotation*
 
+#广点通sdk
 -keep class com.qq.e.**	{public protected *;}
-
 -keep class android.support.v4.**{public *;}
-
 -keep class android.support.v7.**{public *;}
-
 -keep class MTT.ThirdAppInfoNew	{*;}
-
 -keep class com.tencent.**	{*;}
+-dontwarn com.androidquery.**
+-keep class com.androidquery.** { *;}
+-dontwarn tv.danmaku.**
+-keep class tv.danmaku.** { *;}
+-dontwarn androidx.**
 
-
-#头条 穿山甲 sdk
-
+###头条 穿山甲 sdk
 -keep class com.bytedance.sdk.openadsdk.**	{	*;	}
-
 -keep class com.androidquery.callback.**	{*;}
-
 -keep class com.bytedance.sdk.openadsdk.service.TTDownloadProvider
+-keep class com.androidquery.auth.TwitterHandle.**	{	*;	}
+-keep class com.androidquery.**	{*;}
+-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
+-keep class com.bytedance.sdk.openadsdk.** {*;}
+-keep class com.androidquery.callback.** {*;}
+-keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
+-keep class com.ss.sys.ces.* {*;}
+
+
+
+#adView
+-keepclassmembers class * {public *;}
+-keep public class com.kyview.** {*;}
+-keep public class com.kuaiyou.** {*;}
 
 ## 7. 常见问题
 get ad ﬁled 广告未放量，请联系商务

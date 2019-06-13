@@ -43,11 +43,13 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
-            signingConfig signingConfigs.release
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
         }
         debug {
+            minifyEnabled false
             debuggable true  //启用debug的buildType配置
         }
     }
