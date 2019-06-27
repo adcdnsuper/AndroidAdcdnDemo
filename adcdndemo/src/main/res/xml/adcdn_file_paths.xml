@@ -15,4 +15,15 @@
     <external-path
         name="gdt_sdk_download_path"
         path="GDTDOWNLOAD" />
+    <!--讯飞下载配置-->
+    <external-path
+        name="IFly_AD_Download_Path"
+        path="IFlyAdDownload" />
+    <!--小米下载配置-->
+    <external-path
+        name="files_root"
+        path="mimoDownload" />
+    <external-path
+        name="external_storage_root"
+        path="." />
 </paths>

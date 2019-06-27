@@ -48,3 +48,28 @@
 -keep public class com.kyview.** {*;}
 -keep public class com.kuaiyou.** {*;}
 
+#讯飞
+-keep class com.iflytek.** {* ;}
+-keep class android.support.v4.**{public * ;}
+
+#百度sdk
+-keepclassmembers class * extends android.app.Activity	{
+public void *(android.view.View);}
+-keepclassmembers enum *	{
+public static **[]	values();
+public static ** valueOf(java.lang.String);
+		}
+-keep class com.baidu.mobads.*.**{*;}
+
+#360
+-keep class com.ak.** {*;}
+-keep class android.support.v4.** {
+    public *;
+}
+
+#小米
+-keep class com.xiaomi.ad.** {*;}
+-keep class com.miui.zeus.**{*;}
+
+#谷歌
+-keep class com.google.android.gms.** {*;}

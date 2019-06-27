@@ -8,7 +8,11 @@
 ```
 android {
  ....
- //1.添加依赖目录
+ defaultConfig {
+ ...
+  multiDexEnabled true//方法数量超量需要设置
+ }
+ //.添加依赖目录
  repositories {
    flatDir {
      dirs 'libs'
@@ -30,6 +34,17 @@ android {
  implementation(name:	'open_ad_sdk',	ext:	'aar')
   //adview需要添加以下依赖包
   implementation(name:	'adview-release',	ext:	'aar')
+  //baidu需要添加以下依赖包
+  implementation(name:	'baidu-release',	ext:	'aar')
+  implementation(name:	'Baidu_MobAds_SDK-release',	ext:	'aar')
+  //讯飞需要添加以下依赖包
+   implementation(name:	'iflytek-release',	ext:	'aar')
+   //360联盟需要添加以下依赖包
+   implementation(name:	'torch-adcore-5.4.3106',	ext:	'aar')
+   implementation(name:	'torch-release',	ext:	'aar')
+   //谷歌需要添加以下依赖包
+    implementation(name:	'admob-release',	ext:	'aar')
+     implementation 'com.google.android.gms:play-services-ads:16.0.0'
 
 
 ```
@@ -280,39 +295,52 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ## 5.适配Android7.0
 如果您的应用需要适配7.0以上，请在AndroidManifest中添加以下代码：
 ```
-<!--腾讯FileProvider-->
-<provider
-    android:name="android.support.v4.content.FileProvider"
-    android:authorities="${applicationId}.fileprovider"
-    android:exported="false"
-    android:grantUriPermissions="true">
-    <meta-data
-        android:name="android.support.FILE_PROVIDER_PATHS"
-        android:resource="@xml/gdt_file_path" />
-</provider>
+        <!--腾讯FileProvider-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/adcdn_file_paths" />
+        </provider>
+        <!--头条FileProvider-->
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+            android:authorities="${applicationId}.TTFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/adcdn_file_paths" />
+        </provider>
 
-<!--百度FileProvider-->
-<!-- <provider
-    android:name="com.baidu.mobads.openad.FileProvider"
-    android:authorities="${applicationId}.bd.provider"
-    android:exported="false"
-    android:grantUriPermissions="true">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/adcdn_file_paths" />
-</provider> -->
-<!--头条FileProvider-->
-<provider
-    android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
-    android:authorities="${applicationId}.TTFileProvider"
-    android:exported="false"
-    android:grantUriPermissions="true">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/adcdn_file_paths" />
-</provider>
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+            android:authorities="${applicationId}.TTMultiProvider"
+            android:exported="false" />
 
- <uses-library
+
+        <!--百度FileProvider-->
+        <provider
+            android:name="com.baidu.mobads.openad.FileProvider"
+            android:authorities="${applicationId}.bd.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/adcdn_file_paths" />
+        </provider>
+
+        <!--360TorchProvider-->
+        <provider
+            android:name="com.ak.torch.shell.provider.TorchProvider"
+            android:authorities="${applicationId}.torchadsdkprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+
+        <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 ```

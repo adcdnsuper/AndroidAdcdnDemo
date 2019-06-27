@@ -83,6 +83,30 @@
                 android:resource="@xml/adcdn_file_paths" />
         </provider>
 
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+            android:authorities="${applicationId}.TTMultiProvider"
+            android:exported="false" />
+
+
+        <!--百度FileProvider-->
+        <provider
+            android:name="com.baidu.mobads.openad.FileProvider"
+            android:authorities="${applicationId}.bd.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/adcdn_file_paths" />
+        </provider>
+
+        <!--360TorchProvider-->
+        <provider
+            android:name="com.ak.torch.shell.provider.TorchProvider"
+            android:authorities="${applicationId}.torchadsdkprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
