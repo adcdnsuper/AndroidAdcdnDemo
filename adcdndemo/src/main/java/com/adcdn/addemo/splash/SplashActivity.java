@@ -23,6 +23,8 @@ import java.util.List;
 
 
 
+
+
 public class SplashActivity extends AppCompatActivity {
     private static final String[] permissions = {Manifest.permission.ACCESS_COARSE_LOCATION
             , Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE
