@@ -100,13 +100,6 @@
                 android:resource="@xml/adcdn_file_paths" />
         </provider>
 
-        <!--360TorchProvider-->
-        <provider
-            android:name="com.ak.torch.shell.provider.TorchProvider"
-            android:authorities="${applicationId}.torchadsdkprovider"
-            android:exported="false"
-            android:grantUriPermissions="true" />
-
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
