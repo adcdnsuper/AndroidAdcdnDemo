@@ -59,6 +59,9 @@
             android:name="com.adcdn.addemo.information.InformationImageOnlyActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.adcdn.addemo.nativead.NativeActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.adcdn.addemo.video.VideoActivity"
             android:screenOrientation="portrait" />
 

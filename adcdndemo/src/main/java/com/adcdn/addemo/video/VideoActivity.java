@@ -25,7 +25,7 @@ public class VideoActivity extends Activity {
     private static final String TAG = "ADMobGen_Log";
     private AdcdnVideoView adcdnVideoView;
 
-    private Button btnLoad, btnShow, isReady;
+    private Button btnLoad, btnShow;
 
 
     @Override
@@ -34,35 +34,17 @@ public class VideoActivity extends Activity {
         setContentView(R.layout.reward_video);
         btnLoad = findViewById(R.id.btn_load);
         btnShow = findViewById(R.id.btn_show);
-        isReady = findViewById(R.id.is_ready);
 
         btnLoad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                adcdnVideoView.loadAd(new AdcdnVideoLoadListener() {
-                    @Override
-                    public void onLoadSucceed() {
-                        Toast.makeText(VideoActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onLoadFailed(String s) {
-                        Toast.makeText(VideoActivity.this, "广告下载失败" + s, Toast.LENGTH_SHORT).show();
-                    }
-                });
+                adcdnVideoView.loadAd();
             }
         });
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 adcdnVideoView.showAd();
-            }
-        });
-        isReady.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                adMobGenVideoView.isReady();
-                Toast.makeText(VideoActivity.this, "广告加载" + adcdnVideoView.isReady(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -73,6 +55,7 @@ public class VideoActivity extends Activity {
             @Override
             public void onVideoDownloadSuccess() {
                 Log.e(TAG, "广告下载完成了 ::::: ");
+                Toast.makeText(VideoActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
             }
 
             @Override

@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.adcdn.addemo.banner.BannerActivity;
 import com.adcdn.addemo.information.InformationActivity;
+import com.adcdn.addemo.nativead.NativeActivity;
 import com.adcdn.addemo.splash.SplashActivity2;
 import com.adcdn.addemo.video.VideoActivity;
 import com.yunxia.addemo.R;
@@ -80,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 VideoActivity.jumpHere(MainActivity.this);
+            }
+        });
+        findViewById(R.id.tvNative).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NativeActivity.jumpHere(MainActivity.this);
             }
         });
     }
