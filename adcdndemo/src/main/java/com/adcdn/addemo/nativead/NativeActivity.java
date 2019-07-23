@@ -24,7 +24,7 @@ import com.yunxia.adsdk.tpadmobsdk.entity.NativeADDatas;
  */
 
 public class NativeActivity extends Activity {
-    private static final String TAG = "ADMobGen_Log";
+    private static final String TAG = "ADCDN_Log";
     private AdcdnNativeView adcdnNativeView;
     private NativeADDatas mNativeADData;
 
@@ -59,7 +59,7 @@ public class NativeActivity extends Activity {
                 if (mNativeADData != null) {
                     showAD();
                 }
-                Toast.makeText(NativeActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(NativeActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
 
             }
 

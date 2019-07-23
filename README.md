@@ -32,19 +32,11 @@ android {
  //头条需要添加以下依赖包
  implementation(name:	'toutiao-release',	ext:	'aar')
  implementation(name:	'open_ad_sdk',	ext:	'aar')
-  //adview需要添加以下依赖包
-  implementation(name:	'adview-release',	ext:	'aar')
   //baidu需要添加以下依赖包
   implementation(name:	'baidu-release',	ext:	'aar')
   implementation(name:	'Baidu_MobAds_SDK-release',	ext:	'aar')
   //讯飞需要添加以下依赖包
    implementation(name:	'iflytek-release',	ext:	'aar')
-   //360联盟需要添加以下依赖包
-   implementation(name:	'torch-adcore-5.4.3106',	ext:	'aar')
-   implementation(name:	'torch-release',	ext:	'aar')
-   //谷歌需要添加以下依赖包
-    implementation(name:	'admob-release',	ext:	'aar')
-     implementation 'com.google.android.gms:play-services-ads:16.0.0'
 
 
 ```
@@ -150,33 +142,28 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
         // 开始获取广告
         adcdnBannerView.loadAd();
 ```
-### 4.4 信息流广告示例
+### 4.4 原生广告示例
 ```
- adcdnInformation = new AdcdnInformation(this, adType, "请填写对应的plcId");
-        adcdnInformation.setListener(new SimpleAdcdnInformationAdListener() {
-            @Override
-            public void onADExposure(IADMobGenInformation adMobGenInformation) {
-                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 	::::: ");
-            }
+  adcdnNativeView = new AdcdnNativeView(this, "请填写对应的plcId");
+ adcdnNativeView.loadAd(new AdcdnNativeAdListener() {
+             @Override
+             public void onADLoaded(NativeADDatas nativeADData) {
+                 mNativeADData = nativeADData;
+                 if (mNativeADData != null) {
+                     //根据广告内容自行渲染布局
+                 }
+ //                Toast.makeText(NativeActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
 
-            @Override
-            public void onADReceiv(IADMobGenInformation adMobGenInformation) {
-                Log.e(TAG, "广告获取成功 ::::: ");
-              
-            }
+             }
 
-            @Override
-            public void onADClick(IADMobGenInformation adMobGenInformation) {
-                Log.e(TAG, "广告被点击 ::::: ");
-            }
+             @Override
+             public void onADError(String error) {
+                 Toast.makeText(NativeActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
 
-            @Override
-            public void onADFailed(String error) {
-                Log.e(TAG, "广告数据获取失败时回调 ::::: " + error);
-           
-            }
-        });
-      adMobGenInformation.loadAd();
+             }
+
+
+         });
 ```
 ### 4.5 插屏广告示例
 ```

@@ -22,7 +22,7 @@ import com.yunxia.adsdk.tpadmobsdk.ad.video.AdcdnVideoView;
  */
 
 public class VideoActivity extends Activity {
-    private static final String TAG = "ADMobGen_Log";
+    private static final String TAG = "ADCDN_Log";
     private AdcdnVideoView adcdnVideoView;
 
     private Button btnLoad, btnShow;
