@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -46,7 +47,7 @@ public class NativeActivity extends Activity {
             }
         });
 
-        adcdnNativeView = new AdcdnNativeView(this, "1000382");
+        adcdnNativeView = new AdcdnNativeView(this, "1010016");
         loadAd();
 
     }
@@ -69,15 +70,26 @@ public class NativeActivity extends Activity {
 
             }
 
+            @Override
+            public void onExposured() {
+                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+
+            }
+
+            @Override
+            public void onClicked() {
+                Log.e(TAG, "广告被点击了 ::::: ");
+
+            }
+
 
         });
 
     }
 
 
-
     /**
-     * 展示原生广告时，一定要先调用onExposured接口曝光广告，否则将无法调用onClicked点击接口
+     * 展示原生广告时，一定要调用onExposured接口曝光广告
      */
     public void showAD() {
         videoView = findViewById(R.id.ly_video);
@@ -131,7 +143,7 @@ public class NativeActivity extends Activity {
         } else {
             aQuery.id(R.id.tv_source).text("广告·" + mNativeADData.getSource());
         }
-        mNativeADData.onExposured(this.findViewById(R.id.nativeADContainer)); // 需要先调用曝光接口
+        mNativeADData.onExposured(this.findViewById(R.id.nativeADContainer)); // 必须调用曝光接口
     }
 
     @Override
