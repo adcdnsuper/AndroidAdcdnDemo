@@ -41,6 +41,16 @@
             android:text="原生广告" />
 
         <TextView
+            android:id="@+id/tvNativeViewPage"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="原生广告ViewPage" />
+
+        <TextView
             android:id="@+id/tvInsert"
             android:layout_width="match_parent"
             android:layout_height="48dp"

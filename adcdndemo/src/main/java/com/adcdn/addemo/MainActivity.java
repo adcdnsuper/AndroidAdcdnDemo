@@ -7,13 +7,12 @@ import android.view.View;
 import com.adcdn.addemo.banner.BannerActivity;
 import com.adcdn.addemo.information.InformationActivity;
 import com.adcdn.addemo.nativead.NativeActivity;
+import com.adcdn.addemo.nativead.ViewPageNativeActivity;
 import com.adcdn.addemo.splash.SplashActivity2;
 import com.adcdn.addemo.video.VideoActivity;
 import com.yunxia.addemo.R;
 import com.adcdn.addemo.interstitial.InterstitialActivity;
 import com.yunxia.adsdk.tpadmobsdk.ad.constant.InformationAdType;
-
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -88,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 NativeActivity.jumpHere(MainActivity.this);
             }
+        });
+        findViewById(R.id.tvNativeViewPage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewPageNativeActivity.jumpHere(MainActivity.this);
+            }
+
         });
     }
 }
