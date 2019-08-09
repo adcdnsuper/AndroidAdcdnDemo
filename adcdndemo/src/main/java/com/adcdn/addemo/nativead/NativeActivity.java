@@ -60,7 +60,7 @@ public class NativeActivity extends Activity {
                 if (mNativeADData != null) {
                     showAD();
                 }
-//                Toast.makeText(NativeActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NativeActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
 
             }
 
@@ -72,12 +72,15 @@ public class NativeActivity extends Activity {
 
             @Override
             public void onExposured() {
+                Toast.makeText(NativeActivity.this, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ", Toast.LENGTH_SHORT).show();
                 Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
 
             }
 
             @Override
             public void onClicked() {
+                Toast.makeText(NativeActivity.this, "广告被点击了 ::::: ", Toast.LENGTH_SHORT).show();
+
                 Log.e(TAG, "广告被点击了 ::::: ");
 
             }

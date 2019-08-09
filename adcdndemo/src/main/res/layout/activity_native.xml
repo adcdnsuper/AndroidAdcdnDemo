@@ -29,6 +29,12 @@
                     android:text="刷新广告"
                     android:textAllCaps="false" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="700dp"
+                    android:gravity="center"
+                    android:text="滑\n动\n到\n底\n部\n曝\n光\n广\n告"
+                    android:textSize="25dp" />
 
 
                 <Button
@@ -43,9 +49,9 @@
 
             <include
                 android:id="@+id/nativeADContainer"
+                layout="@layout/nativelistitem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                layout="@layout/nativelistitem" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
