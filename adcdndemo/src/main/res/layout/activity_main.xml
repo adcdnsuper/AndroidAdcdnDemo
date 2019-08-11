@@ -78,8 +78,7 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
-            android:text="图片信息流"
-            android:visibility="gone" />
+            android:text="图片信息流" />
 
         <TextView
             android:id="@+id/tvInformationRightImage"
