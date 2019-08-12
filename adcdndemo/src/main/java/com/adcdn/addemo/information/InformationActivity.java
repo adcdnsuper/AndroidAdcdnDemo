@@ -58,7 +58,7 @@ public class InformationActivity extends Activity implements OnRefreshLoadMoreLi
 //        默认信息流样式为上图下文
 //        adcdnInformation = new AdcdnInformation(this);
 //        adcdnInformation = new AdcdnInformation(this, adType, "1000382");
-        adcdnInformation = new AdcdnInformation(this, adType, "1010016");
+        adcdnInformation = new AdcdnInformation(this, adType, "1010014");
         adcdnInformation.setListener(new SimpleAdcdnInformationAdListener() {
             @Override
             public void onADExposure(IADMobGenInformation adMobGenInformation) {
