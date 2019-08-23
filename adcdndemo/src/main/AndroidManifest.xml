@@ -62,6 +62,9 @@
             android:name="com.adcdn.addemo.nativead.NativeActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.adcdn.addemo.nativead.NativeModelActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.adcdn.addemo.nativead.ViewPageNativeActivity"
             android:screenOrientation="portrait" />
         <activity

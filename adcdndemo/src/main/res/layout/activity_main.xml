@@ -41,6 +41,16 @@
             android:text="原生广告" />
 
         <TextView
+            android:id="@+id/tvNativePic"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="原生图片广告" />
+
+        <TextView
             android:id="@+id/tvNativeViewPage"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -48,6 +58,7 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
+            android:visibility="gone"
             android:text="原生广告ViewPage" />
 
         <TextView
@@ -77,6 +88,7 @@
             android:layout_marginTop="10dp"
             android:background="#fff"
             android:elevation="5dp"
+            android:visibility="gone"
             android:gravity="center"
             android:text="图片信息流" />
 
