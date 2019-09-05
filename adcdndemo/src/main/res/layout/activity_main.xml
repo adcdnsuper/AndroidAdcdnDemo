@@ -48,7 +48,7 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
-            android:text="原生图片广告" />
+            android:text="原生模板广告" />
 
         <TextView
             android:id="@+id/tvNativeViewPage"

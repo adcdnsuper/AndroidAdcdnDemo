@@ -165,7 +165,46 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 
          });
 ```
-### 4.5 插屏广告示例
+### 4.5 原生模板广告示例
+```
+   nativeModelView.loadAd(new AdcdnNativeModelAdListener() {
+  
+              @Override
+              public void onADReceiv(NativeModelADDatas nativeModelADDatas) {
+                  adView.removeAllViews();
+                  adView.addView(nativeModelADDatas.getADView());
+                  nativeModelADDatas.onExposured(adView);//必须调用此方法，否则影响计费
+  
+                  Log.e(TAG, "广告下载成功 ::::: ");
+                  Toast.makeText(NativeModelActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+  
+              }
+  
+              @Override
+              public void onADError(String error) {
+                  Toast.makeText(NativeModelActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
+  
+              }
+  
+              @Override
+              public void onExposured() {
+                  Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+              }
+  
+              @Override
+              public void onClicked() {
+                  Log.e(TAG, "广告被点击了 ::::: ");
+  
+              }
+  
+              @Override
+              public void onAdClose() {
+  
+              }
+  
+          });
+```
+### 4.6 插屏广告示例
 ```
  adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this,"请填写对应的plcId");
         adcdnInsertView.setListener(new AdcdnInsertitailAdListener() {
@@ -208,72 +247,62 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
         });
         adcdnInsertView.loadAd();
 ```
-### 4.5 激励视屏广告示例
+### 4.7 激励视屏广告示例
 ```
- adcdnVideoView = new AdcdnVideoView(this, "请填写对应的plcId");
-        // 设置广告监听（不设置也行）
-        adcdnVideoView.setListener(new AdcdnVideoAdListener() {
-
-            @Override
-            public void onVideoDownloadSuccess() {
-                Log.e(TAG, "广告下载完成了 ::::: ");
-            }
-
-            @Override
-            public void onVideoDownloadFailed() {
-                Log.e(TAG, "广告下载失败了 ::::: ");
-            }
-
-            @Override
-            public void playCompletion() {
-                Log.e(TAG, "广告播放完成 ::::: ");
-            }
-
-            @Override
-            public void onAdShow() {
-                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-            }
-
-            @Override
-            public void onAdClick() {
-                Log.e(TAG, "广告被点击了 ::::: ");
-            }
-
-            @Override
-            public void onAdClose() {
-                Log.e(TAG, "广告被关闭了，该回调不一定会有 ::::: ");
-            }
-
-            @Override
-            public void onAdFailed(String s) {
-                Log.e(TAG, "广告加载失败了 ::::: " + s);
-            }
-        });
+ adcdnVideoView = new AdcdnVideoView(this, "1000383");
+  adcdnVideoView.setListener(new AdcdnVideoAdListener() {
+ 
+             @Override
+             public void onVideoDownloadSuccess() {
+                 Log.e(TAG, "广告下载完成了 ::::: ");
+                 Toast.makeText(VideoActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+             }
+ 
+             @Override
+             public void onVideoDownloadFailed() {
+                 Log.e(TAG, "广告下载失败了 ::::: ");
+             }
+ 
+             @Override
+             public void playCompletion() {
+                 Log.e(TAG, "广告播放完成 ::::: ");
+             }
+ 
+             @Override
+             public void onAdShow() {
+                 Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+             }
+ 
+             @Override
+             public void onAdClick() {
+                 Log.e(TAG, "广告被点击了 ::::: ");
+             }
+ 
+             @Override
+             public void onAdClose() {
+                 Log.e(TAG, "广告被关闭了，该回调不一定会有 ::::: ");
+             }
+ 
+             @Override
+             public void onAdFailed(String s) {
+                 Log.e(TAG, "广告加载失败了 ::::: " + s);
+             }
+         });
 
 //下载点击按钮
-         btnLoad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                adcdnVideoView.loadAd(new AdcdnVideoLoadListener() {
+          btnLoad.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onLoadSucceed() {
-                        
-                    }
-
-                    @Override
-                    public void onLoadFailed(String s) {
-                        
+                    public void onClick(View view) {
+                        adcdnVideoView.loadAd();
                     }
                 });
-            }
-        });
 //展示广告点击按钮
-        btnShow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                adcdnVideoView.showAd();
-            }
-        });
+          btnShow.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        adcdnVideoView.showAd();
+                    }
+                });
 ```
 
 注意事项：
