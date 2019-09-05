@@ -98,17 +98,6 @@
             android:exported="false" />
 
 
-        <!--百度FileProvider-->
-        <provider
-            android:name="com.baidu.mobads.openad.FileProvider"
-            android:authorities="${applicationId}.bd.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/adcdn_file_paths" />
-        </provider>
-
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />

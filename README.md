@@ -32,11 +32,7 @@ android {
  //头条需要添加以下依赖包
  implementation(name:	'toutiao-release',	ext:	'aar')
  implementation(name:	'open_ad_sdk',	ext:	'aar')
-  //baidu需要添加以下依赖包
-  implementation(name:	'baidu-release',	ext:	'aar')
-  implementation(name:	'Baidu_MobAds_SDK-release',	ext:	'aar')
-  //讯飞需要添加以下依赖包
-   implementation(name:	'iflytek-release',	ext:	'aar')
+
 
 
 ```
@@ -338,23 +334,6 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
             android:exported="false" />
 
 
-        <!--百度FileProvider-->
-        <provider
-            android:name="com.baidu.mobads.openad.FileProvider"
-            android:authorities="${applicationId}.bd.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/adcdn_file_paths" />
-        </provider>
-
-        <!--360TorchProvider-->
-        <provider
-            android:name="com.ak.torch.shell.provider.TorchProvider"
-            android:authorities="${applicationId}.torchadsdkprovider"
-            android:exported="false"
-            android:grantUriPermissions="true" />
 
         <uses-library
             android:name="org.apache.http.legacy"
