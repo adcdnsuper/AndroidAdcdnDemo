@@ -32,7 +32,7 @@ public class BannerActivity extends Activity {
         flContainer = findViewById(R.id.flContainer);
 
         // 初始化Banner广告
-        adcdnBannerView = new AdcdnBannerView(this,"1000380");
+        adcdnBannerView = new AdcdnBannerView(this,"1010032");
         // 不设置banner广告尺寸大小则默认比例为: 640*100;
 //        adMobGenBannerView.setADSize(640,100);
         // 设置广告监听（不设置也行）

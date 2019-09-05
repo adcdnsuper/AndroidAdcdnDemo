@@ -54,7 +54,7 @@ public class SplashActivity2 extends AppCompatActivity{
     }
 
     private void initAd() {
-        adcdnSplashView = new AdcdnSplashView(this, "1010008", flContainer);
+        adcdnSplashView = new AdcdnSplashView(this, "1010029", flContainer);
         adcdnSplashView.setListener(new AdcdnSplashAdListener() {
             @Override
             public void onADExposure() {

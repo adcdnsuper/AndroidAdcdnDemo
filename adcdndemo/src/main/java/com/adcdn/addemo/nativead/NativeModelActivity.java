@@ -42,7 +42,7 @@ public class NativeModelActivity extends Activity {
         btnLoad.setOnClickListener(v -> loadAd());
 
 
-        nativeModelView = new AdcdnNativeModelView(this, "1010020");
+        nativeModelView = new AdcdnNativeModelView(this, "1010033");
         //设置广告宽高，不设置默认宽高(可选)
         nativeModelView.setADSize(new ADSize(ADSize.FULL_WIDTH, ADSize.AUTO_HEIGHT));
         loadAd();

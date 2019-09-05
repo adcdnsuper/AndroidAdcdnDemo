@@ -28,7 +28,7 @@ public class InterstitialActivity  extends AppCompatActivity {
 
     public void showAd(View v){
         showProgressDialog();
-        adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this,"1000381");
+        adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this,"1010031");
         adcdnInsertView.setListener(new AdcdnInsertitailAdListener() {
             @Override
             public void onADExposure() {

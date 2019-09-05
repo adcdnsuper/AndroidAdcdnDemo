@@ -79,6 +79,7 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
+            android:visibility="gone"
             android:text="信息流广告" />
 
         <TextView
