@@ -64,8 +64,9 @@
         <activity
             android:name="com.adcdn.addemo.nativead.NativeModelActivity"
             android:screenOrientation="portrait" />
+
         <activity
-            android:name="com.adcdn.addemo.nativead.ViewPageNativeActivity"
+            android:name="com.adcdn.addemo.nativead.NativeExpressActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.adcdn.addemo.video.VideoActivity"
