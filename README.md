@@ -163,22 +163,23 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ```
 ### 4.5 原生模板广告示例
 ```
-   nativeModelView.loadAd(new AdcdnNativeModelAdListener() {
+adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plcId");
+   adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
   
               @Override
-              public void onADReceiv(NativeModelADDatas nativeModelADDatas) {
+              public void onADReceiv(NativeExpressADDatas nativeExpressADDatas) {
                   adView.removeAllViews();
-                  adView.addView(nativeModelADDatas.getADView());
-                  nativeModelADDatas.onExposured(adView);//必须调用此方法，否则影响计费
+                  adView.addView(nativeExpressADDatas.getADView());
+                  nativeExpressADDatas.onExposured(adView);//必须调用此方法，否则影响计费
   
                   Log.e(TAG, "广告下载成功 ::::: ");
-                  Toast.makeText(NativeModelActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+                  Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
   
               }
   
               @Override
               public void onADError(String error) {
-                  Toast.makeText(NativeModelActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
+                  Toast.makeText(NativeExpressActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
   
               }
   
@@ -197,6 +198,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
               public void onAdClose() {
   
               }
+  
   
           });
 ```

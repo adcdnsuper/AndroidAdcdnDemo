@@ -14,7 +14,6 @@
             android:orientation="vertical">
 
 
-
             <LinearLayout
                 android:id="@+id/feeds_button_group"
                 android:layout_width="match_parent"
@@ -33,27 +32,55 @@
                     android:textAllCaps="false" />
 
 
-                <Button
-                    android:id="@+id/test_load_show"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="3dp"
-                    android:text="load+show"
-                    android:textAllCaps="false"
-                    android:visibility="gone" />
+                <RadioGroup
+                    android:id="@+id/radioGroupId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="三小图" />
+
+                    <RadioButton
+                        android:id="@+id/rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="上文下图" />
+
+                    <RadioButton
+                        android:id="@+id/rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="左图右文" />
+
+                    <RadioButton
+                        android:id="@+id/rb4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="左文右图" />
+
+                    <RadioButton
+                        android:id="@+id/rb5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="文字浮层" />
+
+                    <RadioButton
+                        android:id="@+id/rb6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="文字浮层（上文下图）" />
+                </RadioGroup>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="900dp"
-                android:visibility="gone">
-
-            </LinearLayout>
 
             <FrameLayout
                 android:id="@+id/ll_adView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

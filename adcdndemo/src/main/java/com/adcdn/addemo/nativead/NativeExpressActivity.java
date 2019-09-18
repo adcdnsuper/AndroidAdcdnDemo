@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.yunxia.addemo.R;
@@ -19,18 +20,18 @@ import com.yunxia.adsdk.tpadmobsdk.entity.NativeADDatas;
 import com.yunxia.adsdk.tpadmobsdk.entity.NativeExpressADDatas;
 
 /**
- * @author : ciba
- * @date : 2019/8/25
- * @description : 原生模板广告获取demo
+ * @description : 原生模板广告获取demo(2.0)
  */
 
-public class NativeExpressActivity extends Activity {
+public class NativeExpressActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
     private static final String TAG = "NativeExpressActivity";
     private NativeADDatas mNativeADData;
 
     private Button btnLoad;
     private FrameLayout adView;
     private AdcdnNativeExpressView adcdnNativeExpressView;
+    private RadioGroup radioGroup;
+    private String adPlaceId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ public class NativeExpressActivity extends Activity {
         setContentView(R.layout.activity_native_model);
         btnLoad = findViewById(R.id.btn_load);
         adView = findViewById(R.id.ll_adView);
+        radioGroup = findViewById(R.id.radioGroupId);
+        radioGroup.setOnCheckedChangeListener(this);
         btnLoad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +50,7 @@ public class NativeExpressActivity extends Activity {
 
 
 //        nativeModelView = new AdcdnNativeModelView(this, "1000382");
-        adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010033");
+        adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010043");
         loadAd();
     }
 
@@ -106,5 +109,36 @@ public class NativeExpressActivity extends Activity {
 
     private boolean isVisible(View v) {
         return v.getLocalVisibleRect(new Rect());
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch (group.getCheckedRadioButtonId()) {
+            case R.id.rb1://三小图
+                adcdnNativeExpressView.setAdId("1010042");
+                loadAd();
+                break;
+            case R.id.rb2://上文下图
+                adcdnNativeExpressView.setAdId("1010043");
+                loadAd();
+                break;
+            case R.id.rb3://左图右文
+                adcdnNativeExpressView.setAdId("1010040");
+                loadAd();
+                break;
+            case R.id.rb4://左文右图
+                adcdnNativeExpressView.setAdId("1010041");
+                loadAd();
+                break;
+            case R.id.rb5://文字浮层
+                adcdnNativeExpressView.setAdId("1010038");
+                loadAd();
+                break;
+            case R.id.rb6://文字浮层（上文下图）
+                adcdnNativeExpressView.setAdId("1010039");
+                loadAd();
+                break;
+        }
+
     }
 }
