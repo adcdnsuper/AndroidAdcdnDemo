@@ -49,7 +49,6 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
         });
 
 
-//        nativeModelView = new AdcdnNativeModelView(this, "1000382");
         adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010043");
         loadAd();
     }
@@ -59,10 +58,9 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
         adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
 
             @Override
-            public void onADReceiv(NativeExpressADDatas nativeExpressADDatas) {
+            public void onADReceiv(View view) {
                 adView.removeAllViews();
-                adView.addView(nativeExpressADDatas.getADView());
-                nativeExpressADDatas.onExposured(adView);//必须调用此方法，否则影响计费
+                adView.addView(view);
 
                 Log.e(TAG, "广告下载成功 ::::: ");
                 Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
@@ -76,18 +74,18 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
             }
 
             @Override
-            public void onExposured() {
+            public void onExposured(View view) {
                 Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
             }
 
             @Override
-            public void onClicked() {
+            public void onClicked(View view) {
                 Log.e(TAG, "广告被点击了 ::::: ");
 
             }
 
             @Override
-            public void onAdClose() {
+            public void onAdClose(View view) {
 
             }
 

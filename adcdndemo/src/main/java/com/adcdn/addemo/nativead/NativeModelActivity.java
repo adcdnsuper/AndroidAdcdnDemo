@@ -20,9 +20,7 @@ import com.yunxia.adsdk.tpadmobsdk.entity.NativeADDatas;
 import com.yunxia.adsdk.tpadmobsdk.entity.NativeModelADDatas;
 
 /**
- * @author : ciba
- * @date : 2019/8/25
- * @description : 原生模板广告获取demo
+ * @description : 原生模板广告获取(1.0)
  */
 
 public class NativeModelActivity extends Activity {
