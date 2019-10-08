@@ -49,7 +49,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
         });
 
 
-        adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010043");
+        adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010033");
         loadAd();
     }
 
@@ -117,7 +117,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
                 loadAd();
                 break;
             case R.id.rb2://上文下图
-                adcdnNativeExpressView.setAdId("1010043");
+                adcdnNativeExpressView.setAdId("1010033");
                 loadAd();
                 break;
             case R.id.rb3://左图右文

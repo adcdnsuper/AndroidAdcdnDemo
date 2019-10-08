@@ -38,6 +38,7 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
+            android:visibility="gone"
             android:text="原生广告" />
 
         <TextView
