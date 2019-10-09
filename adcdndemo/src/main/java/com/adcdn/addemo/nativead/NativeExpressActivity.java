@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.yunxia.addemo.R;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnNativeExpressAdListener;
 import com.yunxia.adsdk.tpadmobsdk.ad.nativemodel.AdcdnNativeExpressView;
+import com.yunxia.adsdk.tpadmobsdk.entity.MyADSize;
 import com.yunxia.adsdk.tpadmobsdk.entity.NativeADDatas;
 import com.yunxia.adsdk.tpadmobsdk.entity.NativeExpressADDatas;
 
@@ -50,6 +51,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
 
 
         adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010033");
+        adcdnNativeExpressView.setADSize(new MyADSize(270, MyADSize.AUTO_HEIGHT));//单位dp
         loadAd();
     }
 

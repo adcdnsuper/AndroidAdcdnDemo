@@ -55,6 +55,7 @@ public class VideoActivity extends Activity {
             @Override
             public void onVideoDownloadSuccess() {
                 Log.e(TAG, "广告下载完成了 ::::: ");
+                adcdnVideoView.showAd();
                 Toast.makeText(VideoActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
             }
 

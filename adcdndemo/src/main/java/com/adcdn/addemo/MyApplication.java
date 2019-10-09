@@ -3,7 +3,7 @@ package com.adcdn.addemo;
 import android.app.Application;
 import android.content.Context;
 
-import com.yunxia.adsdk.tpadmobsdk.common.TPADMobSDK;
+import com.yunxia.adsdk.tpadmobsdk.common.AdcdnMobSDK;
 
 
 /**
@@ -21,7 +21,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         // TODO: 2019/5/5 修改为自己的appId
-        TPADMobSDK.instance().initSdk(getApplicationContext(), APP_ID);
+        AdcdnMobSDK.instance().initSdk(getApplicationContext(), APP_ID);
 
     }
 

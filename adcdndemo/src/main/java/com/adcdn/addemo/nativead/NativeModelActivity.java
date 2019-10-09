@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.yunxia.addemo.R;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnNativeModelAdListener;
 import com.yunxia.adsdk.tpadmobsdk.ad.nativemodel.AdcdnNativeModelView;
-import com.yunxia.adsdk.tpadmobsdk.entity.ADSize;
+import com.yunxia.adsdk.tpadmobsdk.entity.MyADSize;
 import com.yunxia.adsdk.tpadmobsdk.entity.NativeADDatas;
 import com.yunxia.adsdk.tpadmobsdk.entity.NativeModelADDatas;
 
@@ -42,7 +42,7 @@ public class NativeModelActivity extends Activity {
 
         nativeModelView = new AdcdnNativeModelView(this, "1010033");
         //设置广告宽高，不设置默认宽高(可选)
-        nativeModelView.setADSize(new ADSize(ADSize.FULL_WIDTH, ADSize.AUTO_HEIGHT));
+        nativeModelView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));
         loadAd();
     }
 
