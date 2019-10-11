@@ -90,10 +90,16 @@ public class MainActivity extends AppCompatActivity {
                 NativeActivity.jumpHere(MainActivity.this);
             }
         });
-        findViewById(R.id.tvNativePic).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.tvNativeEx).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NativeExpressActivity.jumpHere(MainActivity.this);
+            }
+        });
+        findViewById(R.id.tvNativePic).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NativeModelActivity.jumpHere(MainActivity.this);
             }
         });
 

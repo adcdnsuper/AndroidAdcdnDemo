@@ -34,7 +34,7 @@ public class NativeModelActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_native_model);
+        setContentView(R.layout.activity_native_model_pic);
         btnLoad = findViewById(R.id.btn_load);
         adView = findViewById(R.id.ll_adView);
         btnLoad.setOnClickListener(v -> loadAd());

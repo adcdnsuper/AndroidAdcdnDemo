@@ -51,7 +51,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
 
 
         adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010033");
-        adcdnNativeExpressView.setADSize(new MyADSize(270, MyADSize.AUTO_HEIGHT));//单位dp
+        //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
         loadAd();
     }
 

@@ -62,7 +62,7 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
 
 ```
 // TODO: 2018/10/22 修改为自己的appId 测试id = 2
-    TPADMobSDK.instance().initSdk(getApplicationContext(), APP_ID);
+     AdcdnMobSDK.instance().initSdk(getApplicationContext(), APP_ID);
 ```
 ### 4.2 开屏广告示例
 提示：
