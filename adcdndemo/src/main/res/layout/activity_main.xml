@@ -158,5 +158,15 @@
             android:gravity="center"
             android:text="激励视频广告" />
 
+        <TextView
+            android:id="@+id/tvFullVideo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="全屏视频广告(可跳过)" />
+
     </LinearLayout>
 </RelativeLayout>

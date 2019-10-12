@@ -10,6 +10,7 @@ import com.adcdn.addemo.nativead.NativeActivity;
 import com.adcdn.addemo.nativead.NativeExpressActivity;
 import com.adcdn.addemo.nativead.NativeModelActivity;
 import com.adcdn.addemo.splash.SplashActivity2;
+import com.adcdn.addemo.video.FullVideoActivity;
 import com.adcdn.addemo.video.VideoActivity;
 import com.yunxia.addemo.R;
 import com.adcdn.addemo.interstitial.InterstitialActivity;
@@ -103,5 +104,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.tvFullVideo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FullVideoActivity.jumpHere(MainActivity.this);
+            }
+        });
     }
 }

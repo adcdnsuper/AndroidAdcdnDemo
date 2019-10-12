@@ -26,7 +26,7 @@
                     android:layout_width="250dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="3dp"
-                    android:text="加载激励视频"
+                    android:text="加载视频"
                     android:textAllCaps="false" />
 
                 <Button
@@ -34,7 +34,7 @@
                     android:layout_width="250dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="3dp"
-                    android:text="显示激励视频"
+                    android:text="显示视频"
                     android:textAllCaps="false" />
 
                 <Button

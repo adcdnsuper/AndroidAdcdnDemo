@@ -71,6 +71,9 @@
         <activity
             android:name="com.adcdn.addemo.video.VideoActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.adcdn.addemo.video.FullVideoActivity"
+            android:screenOrientation="portrait" />
 
         <!--腾讯FileProvider-->
         <provider
