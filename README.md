@@ -247,7 +247,7 @@ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plc
 ```
 ### 4.7 激励视屏广告示例
 ```
- adcdnVideoView = new AdcdnVideoView(this, "1000383");
+ adcdnVideoView = new AdcdnVideoView(this, "请填写对应的plcId");
   adcdnVideoView.setListener(new AdcdnVideoAdListener() {
  
              @Override
@@ -301,6 +301,66 @@ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plc
                         adcdnVideoView.showAd();
                     }
                 });
+```
+
+### 4.7 全屏视屏广告示例
+```
+   adcdnFullVideoView = new AdcdnFullVideoView(this, "请填写对应的plcId");
+         // 设置广告监听（不设置也行）
+         adcdnFullVideoView.setListener(new AdcdnVideoFullAdListener() {
+ 
+             @Override
+             public void onAdShow() {
+                 Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+             }
+ 
+             @Override
+             public void onAdVideoBarClick() {
+                 Log.e(TAG, "广告被点击了 ::::: ");
+             }
+ 
+             @Override
+             public void onAdClose() {
+                 Log.e(TAG, "广告被关闭了，该回调不一定会有 ::::: ");
+             }
+ 
+             @Override
+             public void onVideoComplete() {
+                 Log.e(TAG, "广告播放完成 ::::: ");
+             }
+ 
+             @Override
+             public void onSkippedVideo() {
+                 Log.e(TAG, "广告被跳过了 ::::: ");
+             }
+ 
+             @Override
+             public void onFullScreenVideoCached() {
+                 Log.e(TAG, "广告下载完成了 ::::: ");
+             }
+ 
+             @Override
+             public void onError(String s) {
+                 Log.e(TAG, "广告加载失败了 ::::: " + s);
+             }
+ 
+ 
+         });
+
+//下载点击按钮
+           btnLoad.setOnClickListener(new View.OnClickListener() {
+                      @Override
+                      public void onClick(View view) {
+                          adcdnFullVideoView.loadAd();
+                      }
+                  });
+//展示广告点击按钮
+          btnShow.setOnClickListener(new View.OnClickListener() {
+                     @Override
+                     public void onClick(View view) {
+                         adcdnFullVideoView.showAd(FullVideoActivity.this);
+                     }
+                 });
 ```
 
 注意事项：
