@@ -47,7 +47,7 @@ public class FullVideoActivity extends Activity {
             }
         });
 
-        adcdnFullVideoView = new AdcdnFullVideoView(this, "1010030");
+        adcdnFullVideoView = new AdcdnFullVideoView(this, "1010113");
         // 设置广告监听（不设置也行）
         adcdnFullVideoView.setListener(new AdcdnVideoFullAdListener() {
 
