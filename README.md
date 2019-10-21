@@ -247,45 +247,62 @@ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plc
 ```
 ### 4.7 激励视屏广告示例
 ```
- adcdnVideoView = new AdcdnVideoView(this, "请填写对应的plcId");
-  adcdnVideoView.setListener(new AdcdnVideoAdListener() {
- 
-             @Override
-             public void onVideoDownloadSuccess() {
-                 Log.e(TAG, "广告下载完成了 ::::: ");
-                 Toast.makeText(VideoActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
-             }
- 
-             @Override
-             public void onVideoDownloadFailed() {
-                 Log.e(TAG, "广告下载失败了 ::::: ");
-             }
- 
-             @Override
-             public void playCompletion() {
-                 Log.e(TAG, "广告播放完成 ::::: ");
-             }
- 
-             @Override
-             public void onAdShow() {
-                 Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-             }
- 
-             @Override
-             public void onAdClick() {
-                 Log.e(TAG, "广告被点击了 ::::: ");
-             }
- 
-             @Override
-             public void onAdClose() {
-                 Log.e(TAG, "广告被关闭了，该回调不一定会有 ::::: ");
-             }
- 
-             @Override
-             public void onAdFailed(String s) {
-                 Log.e(TAG, "广告加载失败了 ::::: " + s);
-             }
-         });
+ AdVideoSlot adSlot = new AdVideoSlot.Builder()
+                .setCodeId("请填写对应的plcId")
+                .setSupportDeepLink(true)
+                .setImageAcceptedSize(1080, 1920)
+                .setRewardName("金币") //奖励的名称
+                .setRewardAmount(3)  //奖励的数量
+                .setUserID("user123") //必传参数，表来标识应用侧唯一用户；若非服务器回调模式或不需sdk透传//可设置为空字符串
+                .setMediaExtra("media_extra") //附加参数，可选
+                .setOrientation(AdcdnVideoView.VERTICAL) //必填参数，期望视频的播放方向：AdcdnVideoView.HORIZONTAL 或 AdcdnVideoView.VERTICAL
+                .build();
+ adcdnVideoView = new AdcdnVideoView(this, adSlot);
+    adcdnVideoView.setListener(new AdcdnVideoAdListener() {
+  
+              @Override
+              public void onVideoDownloadSuccess() {
+                  Log.e(TAG, "广告下载完成了 ::::: ");
+                  adcdnVideoView.showAd();
+                  Toast.makeText(VideoActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+              }
+  
+              @Override
+              public void onVideoDownloadFailed() {
+                  Log.e(TAG, "广告下载失败了 ::::: ");
+              }
+  
+              @Override
+              public void playCompletion() {
+                  Log.e(TAG, "广告播放完成 ::::: ");
+              }
+  
+              @Override
+              public void onRewardVerify(boolean b, AdVideoSlot adVideoSlot) {
+                  Log.e(TAG, " amount:" + adVideoSlot.getRewardAmount() +
+                          " name:" + adVideoSlot.getRewardName() + " userId:" + adVideoSlot.getUserID());
+              }
+  
+              @Override
+              public void onAdShow() {
+                  Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+              }
+  
+              @Override
+              public void onAdClick() {
+                  Log.e(TAG, "广告被点击了 ::::: ");
+              }
+  
+              @Override
+              public void onAdClose() {
+                  Log.e(TAG, "广告被关闭了，该回调不一定会有 ::::: ");
+              }
+  
+              @Override
+              public void onAdFailed(String s) {
+                  Log.e(TAG, "广告加载失败了 ::::: " + s);
+              }
+          });
 
 //下载点击按钮
           btnLoad.setOnClickListener(new View.OnClickListener() {
@@ -305,7 +322,8 @@ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plc
 
 ### 4.7 全屏视屏广告示例
 ```
-   adcdnFullVideoView = new AdcdnFullVideoView(this, "请填写对应的plcId");
+ //activity,位置id，期望视频方向(横屏AdcdnFullVideoView.HORIZONTAL，竖屏AdcdnFullVideoView.VERTICAL)
+   adcdnFullVideoView = new AdcdnFullVideoView(this, "请填写对应的plcId",AdcdnFullVideoView.VERTICAL);
          // 设置广告监听（不设置也行）
          adcdnFullVideoView.setListener(new AdcdnVideoFullAdListener() {
  
