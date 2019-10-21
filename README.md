@@ -319,8 +319,27 @@ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plc
                     }
                 });
 ```
+#### 4.7.1 服务器到服务器回调
+服务器到服务器回调让您判定是否提供奖励给观看广告的用户。当用户成功看完广告时，您可以在ADCDN平台配置从ADCDN服务器到您自己的服务器的回调链接，以通知您用户完成了操作。
+**回调方式说明**
+ADCDN服务器会以 GET 方式请求第三方服务的回调链接，并拼接以下参数回传：
+```
+user_id=%s&trans_id=%s&reward_name=%s&reward_amount=%d&extra=%s&sign=%s
+```
+字段定义 | 字段名称 | 字段类型 | 备注 
+:-: | :-: | :-: | :-: | 
+sign | 签名 | string | 签名 |
+user_id	| 用户id	 | string |	调用SDK透传，应用对用户的唯一标识 |
+trans_id |	交易id |	string | 完成观看的唯一交易ID |
+reward_amount |	奖励数量 | int | 媒体平台配置或调用SDK传入 |
+reward_name | 奖励名称 |	string | 媒体平台配置或调用SDK传入 |
+extra |	Extra |	string | 调用SDK传入并透传，如无需要则为空 |
 
-### 4.7 全屏视屏广告示例
+**签名生成方式**
+appSecurityKey: 您在ADCDN媒体平台新建奖励视频代码位获取到的密钥 transId：交易id sign = sha256(appSecurityKey:transId)
+
+
+### 4.8 全屏视屏广告示例
 ```
  //activity,位置id，期望视频方向(横屏AdcdnFullVideoView.HORIZONTAL，竖屏AdcdnFullVideoView.VERTICAL)
    adcdnFullVideoView = new AdcdnFullVideoView(this, "请填写对应的plcId",AdcdnFullVideoView.VERTICAL);
