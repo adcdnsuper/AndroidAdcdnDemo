@@ -341,6 +341,19 @@ extra |	Extra |	string | 调用SDK传入并透传，如无需要则为空 |
 
 appSecurityKey: 您在ADCDN媒体平台新建奖励视频代码位获取到的密钥 transId：交易id sign = sha256(appSecurityKey:transId)
 
+**返回约定**
+
+返回 json 数据，字段如下：
+字段定义 | 字段名称 | 字段类型 | 备注 
+:-: | :-: | :-: | :-: | 
+isValid | 校验结果 | bool | 判定结果，是否发放奖励|
+示例：
+```
+{
+    "isValid": true
+}
+```
+
 
 ### 4.8 全屏视屏广告示例
 ```
