@@ -14,6 +14,7 @@ import com.yunxia.addemo.R;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnVideoAdListener;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnVideoLoadListener;
 import com.yunxia.adsdk.tpadmobsdk.ad.video.AdcdnVideoView;
+import com.yunxia.adsdk.tpadmobsdk.entity.AdVideoSlot;
 
 /**
  * @author : xnn
@@ -48,7 +49,17 @@ public class VideoActivity extends Activity {
             }
         });
 
-        adcdnVideoView = new AdcdnVideoView(this, "1010030");
+        AdVideoSlot adSlot = new AdVideoSlot.Builder()
+                .setCodeId("1010030")
+                .setSupportDeepLink(true)
+                .setImageAcceptedSize(1080, 1920)
+                .setRewardName("金币") //奖励的名称
+                .setRewardAmount(3)  //奖励的数量
+                .setUserID("user123") //必传参数，表来标识应用侧唯一用户；若非服务器回调模式或不需sdk透传//可设置为空字符串
+                .setMediaExtra("media_extra") //附加参数，可选
+                .setOrientation(AdcdnVideoView.VERTICAL) //必填参数，期望视频的播放方向：AdcdnVideoView.HORIZONTAL 或 AdcdnVideoView.VERTICAL
+                .build();
+        adcdnVideoView = new AdcdnVideoView(this, adSlot);
         // 设置广告监听（不设置也行）
         adcdnVideoView.setListener(new AdcdnVideoAdListener() {
 
@@ -67,6 +78,12 @@ public class VideoActivity extends Activity {
             @Override
             public void playCompletion() {
                 Log.e(TAG, "广告播放完成 ::::: ");
+            }
+
+            @Override
+            public void onRewardVerify(boolean b, AdVideoSlot adVideoSlot) {
+                Log.e(TAG, " amount:" + adVideoSlot.getRewardAmount() +
+                        " name:" + adVideoSlot.getRewardName() + " userId:" + adVideoSlot.getUserID());
             }
 
             @Override

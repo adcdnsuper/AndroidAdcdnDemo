@@ -20,7 +20,7 @@ import com.yunxia.adsdk.tpadmobsdk.ad.video.AdcdnFullVideoView;
  */
 
 public class FullVideoActivity extends Activity {
-    private static final String TAG = "ADMobGen_Log";
+    private static final String TAG = "ADCDN_Log";
     private AdcdnFullVideoView adcdnFullVideoView;
 
     private Button btnLoad, btnShow, isReady;
@@ -47,7 +47,9 @@ public class FullVideoActivity extends Activity {
             }
         });
 
-        adcdnFullVideoView = new AdcdnFullVideoView(this, "1010113");
+
+        //activity,位置id，期望视频方向(横屏AdcdnFullVideoView.HORIZONTAL，竖屏AdcdnFullVideoView.VERTICAL)
+        adcdnFullVideoView = new AdcdnFullVideoView(this, "1010113", AdcdnFullVideoView.VERTICAL);
         // 设置广告监听（不设置也行）
         adcdnFullVideoView.setListener(new AdcdnVideoFullAdListener() {
 

@@ -4,7 +4,6 @@ android {
     compileSdkVersion 28
 
 
-
     defaultConfig {
         applicationId DebugPACKAGE_NAME
         minSdkVersion 18
