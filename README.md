@@ -321,7 +321,9 @@ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plc
 ```
 #### 4.7.1 服务器到服务器回调
 服务器到服务器回调让您判定是否提供奖励给观看广告的用户。当用户成功看完广告时，您可以在ADCDN平台配置从ADCDN服务器到您自己的服务器的回调链接，以通知您用户完成了操作。
+
 **回调方式说明**
+
 ADCDN服务器会以 GET 方式请求第三方服务的回调链接，并拼接以下参数回传：
 ```
 user_id=%s&trans_id=%s&reward_name=%s&reward_amount=%d&extra=%s&sign=%s
@@ -336,6 +338,7 @@ reward_name | 奖励名称 |	string | 媒体平台配置或调用SDK传入 |
 extra |	Extra |	string | 调用SDK传入并透传，如无需要则为空 |
 
 **签名生成方式**
+
 appSecurityKey: 您在ADCDN媒体平台新建奖励视频代码位获取到的密钥 transId：交易id sign = sha256(appSecurityKey:transId)
 
 
