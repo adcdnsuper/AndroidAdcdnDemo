@@ -50,7 +50,7 @@ public class VideoActivity extends Activity {
         });
 
         AdVideoSlot adSlot = new AdVideoSlot.Builder()
-                .setCodeId("1010030")
+                .setCodeId("1010152")
                 .setSupportDeepLink(true)
                 .setImageAcceptedSize(1080, 1920)
                 .setRewardName("金币") //奖励的名称
