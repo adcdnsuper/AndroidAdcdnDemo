@@ -50,7 +50,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
         });
 
 
-        adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010033");
+        adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010042");
         //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
         loadAd();
     }
@@ -116,29 +116,25 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
         switch (group.getCheckedRadioButtonId()) {
             case R.id.rb1://三小图
                 adcdnNativeExpressView.setAdId("1010042");
-                loadAd();
                 break;
             case R.id.rb2://上文下图
-                adcdnNativeExpressView.setAdId("1010033");
-                loadAd();
+                adcdnNativeExpressView.setAdId("1010043");
                 break;
             case R.id.rb3://左图右文
                 adcdnNativeExpressView.setAdId("1010040");
-                loadAd();
                 break;
             case R.id.rb4://左文右图
                 adcdnNativeExpressView.setAdId("1010041");
-                loadAd();
                 break;
             case R.id.rb5://文字浮层
                 adcdnNativeExpressView.setAdId("1010038");
-                loadAd();
                 break;
             case R.id.rb6://文字浮层（上文下图）
                 adcdnNativeExpressView.setAdId("1010039");
-                loadAd();
                 break;
+
         }
+        loadAd();
 
     }
 }
