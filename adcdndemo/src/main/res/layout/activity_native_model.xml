@@ -73,6 +73,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="文字浮层（上文下图）" />
+                    <RadioButton
+                        android:id="@+id/rb7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="纯图广告" />
                 </RadioGroup>
             </LinearLayout>
 
@@ -80,7 +85,7 @@
             <FrameLayout
                 android:id="@+id/ll_adView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="20dp"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
