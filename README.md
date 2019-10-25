@@ -202,6 +202,48 @@ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plc
            });
           });
 ```
+### 4.5.1 原生模板纯图广告示例
+```
+   AdcdnNativeModelView adcdnNativeModelView = new AdcdnNativeModelView(this, "请填写对应的plcId");
+//        adcdnNativeModelView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));// 设置广告宽高，不设置默认宽高
+        adcdnNativeModelView.loadAd(new AdcdnNativeModelAdListener() {
+
+            @Override
+            public void onADReceiv(NativeModelADDatas nativeModelADDatas) {
+                adView.removeAllViews();
+                adView.addView(nativeModelADDatas.getADView());
+                nativeModelADDatas.onExposured(adView);//必须调用此方法，否则影响计费
+
+                Log.e(TAG, "广告下载成功 ::::: ");
+                Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onADError(String error) {
+                Toast.makeText(NativeExpressActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onExposured() {
+                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+            }
+
+            @Override
+            public void onClicked() {
+                Log.e(TAG, "广告被点击了 ::::: ");
+
+            }
+
+            @Override
+            public void onAdClose() {
+
+            }
+
+
+        });
+```
 ### 4.6 插屏广告示例
 ```
  adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this,"请填写对应的plcId");
