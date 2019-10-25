@@ -164,42 +164,42 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ### 4.5 原生模板广告示例
 ```
 adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plcId");
-   adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
-  
-              @Override
-              public void onADReceiv(NativeExpressADDatas nativeExpressADDatas) {
-                  adView.removeAllViews();
-                  adView.addView(nativeExpressADDatas.getADView());
-                  nativeExpressADDatas.onExposured(adView);//必须调用此方法，否则影响计费
-  
-                  Log.e(TAG, "广告下载成功 ::::: ");
-                  Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
-  
-              }
-  
-              @Override
-              public void onADError(String error) {
-                  Toast.makeText(NativeExpressActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
-  
-              }
-  
-              @Override
-              public void onExposured() {
-                  Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-              }
-  
-              @Override
-              public void onClicked() {
-                  Log.e(TAG, "广告被点击了 ::::: ");
-  
-              }
-  
-              @Override
-              public void onAdClose() {
-  
-              }
-  
-  
+    adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
+   
+               @Override
+               public void onADReceiv(View view) {
+                   adView.removeAllViews();
+                   adView.addView(view);
+   
+                   Log.e(TAG, "广告下载成功 ::::: ");
+                   Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+   
+               }
+   
+               @Override
+               public void onADError(String error) {
+                   Toast.makeText(NativeExpressActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
+   
+               }
+   
+               @Override
+               public void onExposured(View view) {
+                   Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+               }
+   
+               @Override
+               public void onClicked(View view) {
+                   Log.e(TAG, "广告被点击了 ::::: ");
+   
+               }
+   
+               @Override
+               public void onAdClose(View view) {
+   
+               }
+   
+   
+           });
           });
 ```
 ### 4.6 插屏广告示例
