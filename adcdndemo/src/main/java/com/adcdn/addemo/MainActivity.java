@@ -110,5 +110,11 @@ public class MainActivity extends AppCompatActivity {
                 FullVideoActivity.jumpHere(MainActivity.this);
             }
         });
+        findViewById(R.id.tvNativeFeed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NativeActivity.jumpHere(MainActivity.this);
+            }
+        });
     }
 }
