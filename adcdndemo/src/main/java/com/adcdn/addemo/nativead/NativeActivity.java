@@ -47,7 +47,7 @@ public class NativeActivity extends Activity {
             }
         });
 
-        adcdnNativeView = new AdcdnNativeView(this, "1010033");
+        adcdnNativeView = new AdcdnNativeView(this, "1010210");
         loadAd();
 
     }
