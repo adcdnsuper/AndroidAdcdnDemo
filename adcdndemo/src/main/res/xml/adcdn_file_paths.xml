@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--百度下载配置-->
-    <external-files-path
-        name="bdpath"
-        path="bddownload/" />
-    <external-path
-        name="bdpathsd"
-        path="bddownload/" />
-    <!-- 头条下载配置-->
     <external-files-path
         name="external_files_path"
         path="Download" />
-    <!-- 腾讯下载配置-->
     <external-path
         name="gdt_sdk_download_path"
         path="GDTDOWNLOAD" />
-    <!--讯飞下载配置-->
-    <external-path
-        name="IFly_AD_Download_Path"
-        path="IFlyAdDownload" />
-    <!--小米下载配置-->
     <external-path
         name="files_root"
         path="mimoDownload" />
