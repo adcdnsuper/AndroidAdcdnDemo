@@ -75,7 +75,7 @@
             android:name="com.adcdn.addemo.video.FullVideoActivity"
             android:screenOrientation="portrait" />
 
-        <!--腾讯FileProvider-->
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -85,7 +85,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/adcdn_file_paths" />
         </provider>
-        <!--头条FileProvider-->
+
         <provider
             android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
             android:authorities="${applicationId}.TTFileProvider"

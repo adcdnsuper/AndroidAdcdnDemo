@@ -27,10 +27,8 @@ android {
  implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
  //根据APP需要添加的依赖包
- //广点通
  implementation(name:	'gdt-release',	ext:	'aar')
  implementation(name:	'gdt_1.0.5_20191028',	ext:	'aar')
- //头条需要添加以下依赖包
  implementation(name:	'toutiao-release',	ext:	'aar')
  implementation(name:	'open_ad_sdk',	ext:	'aar')
 
