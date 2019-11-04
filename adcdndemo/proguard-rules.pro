@@ -17,7 +17,7 @@
 -keepattributes *JavascriptInterface*
 -keepattributes *Annotation*
 
-#广点通sdk
+#sdk
 -keep class com.qq.e.**	{public protected *;}
 -keep class android.support.v4.**{public *;}
 -keep class android.support.v7.**{public *;}
@@ -29,7 +29,6 @@
 -keep class tv.danmaku.** { *;}
 -dontwarn androidx.**
 
-###头条 穿山甲 sdk
 -keep class com.bytedance.sdk.openadsdk.**	{	*;	}
 -keep class com.androidquery.callback.**	{*;}
 -keep class com.bytedance.sdk.openadsdk.service.TTDownloadProvider
@@ -41,35 +40,3 @@
 -keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
 -keep class com.ss.sys.ces.* {*;}
 
-
-
-#adView
--keepclassmembers class * {public *;}
--keep public class com.kyview.** {*;}
--keep public class com.kuaiyou.** {*;}
-
-#讯飞
--keep class com.iflytek.** {* ;}
--keep class android.support.v4.**{public * ;}
-
-#百度sdk
--keepclassmembers class * extends android.app.Activity	{
-public void *(android.view.View);}
--keepclassmembers enum *	{
-public static **[]	values();
-public static ** valueOf(java.lang.String);
-		}
--keep class com.baidu.mobads.*.**{*;}
-
-#360
--keep class com.ak.** {*;}
--keep class android.support.v4.** {
-    public *;
-}
-
-#小米
--keep class com.xiaomi.ad.** {*;}
--keep class com.miui.zeus.**{*;}
-
-#谷歌
--keep class com.google.android.gms.** {*;}
