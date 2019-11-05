@@ -3,6 +3,7 @@
 -keep class com.yunxia.adsdk.**{*;}
 -keep interface com.yunxia.adsdk.**{*;}
 -keep class com.android.**{*;}
+-keep class com.yunxia.adsdk.toutiao.SdkInitImp
 -keep class com.yunxia.adsdk.admobhttp.**{	*;	}
 -keep class com.jaredrummler.android.processes.**{*;}
 -keep class com.jaredrummler.android.processes.models.**{*;}
