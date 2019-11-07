@@ -637,6 +637,8 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 
 -keep class com.jaredrummler.android.processes.models.**{*;}
 
+-keep class it.sauronsoftware.base64.**{*;}
+
 -dontwarn org.apache.commons.**
 
 -keep class org.apache.**{	*;	}

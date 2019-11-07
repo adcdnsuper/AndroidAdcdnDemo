@@ -7,6 +7,7 @@
 -keep class com.yunxia.adsdk.admobhttp.**{	*;	}
 -keep class com.jaredrummler.android.processes.**{*;}
 -keep class com.jaredrummler.android.processes.models.**{*;}
+-keep class it.sauronsoftware.base64.**{*;}
 -dontwarn org.apache.commons.**
 -keep class org.apache.**{	*;	}
 -ignorewarnings
