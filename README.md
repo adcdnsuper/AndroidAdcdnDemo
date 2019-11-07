@@ -563,7 +563,7 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 ## 5.适配Android7.0
 如果您的应用需要适配7.0以上，请在AndroidManifest中添加以下代码：
 ```
-        <!--腾讯FileProvider-->
+       
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -573,7 +573,7 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/adcdn_file_paths" />
         </provider>
-        <!--头条FileProvider-->
+      
         <provider
             android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
             android:authorities="${applicationId}.TTFileProvider"
