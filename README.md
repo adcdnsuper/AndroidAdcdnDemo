@@ -412,12 +412,12 @@ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plc
               }
   
               @Override
-              public void playCompletion() {
+              public void playCompletion() {//这个回调后可以给用户奖励
                   Log.e(TAG, "广告播放完成 ::::: ");
               }
   
               @Override
-              public void onRewardVerify(boolean b, AdVideoSlot adVideoSlot) {
+              public void onRewardVerify(boolean b, AdVideoSlot adVideoSlot) {//服务器对服务器的回调时用到
                   Log.e(TAG, " amount:" + adVideoSlot.getRewardAmount() +
                           " name:" + adVideoSlot.getRewardName() + " userId:" + adVideoSlot.getUserID());
               }
