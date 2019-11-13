@@ -26,7 +26,6 @@ android {
  implementation(name:	'adcdnsdk-1.0',	ext:	'aar')
  implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
- //根据APP需要添加的依赖包
  implementation(name:	'gdt-release',	ext:	'aar')
  implementation(name:	'gdt_1.0.5_20191028',	ext:	'aar')
  implementation(name:	'toutiao-release',	ext:	'aar')
