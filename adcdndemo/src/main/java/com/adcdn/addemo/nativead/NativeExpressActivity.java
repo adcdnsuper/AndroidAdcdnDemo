@@ -24,6 +24,8 @@ import com.yunxia.adsdk.tpadmobsdk.entity.NativeADDatas;
 import com.yunxia.adsdk.tpadmobsdk.entity.NativeExpressADDatas;
 import com.yunxia.adsdk.tpadmobsdk.entity.NativeModelADDatas;
 
+import java.util.List;
+
 /**
  * @description : 原生模板广告获取demo(2.0)
  */
@@ -33,7 +35,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
     private NativeADDatas mNativeADData;
 
     private Button btnLoad;
-    private FrameLayout adView;
+    private FrameLayout adView, adView2, adView3;
     private AdcdnNativeExpressView adcdnNativeExpressView;
     private RadioGroup radioGroup;
     private String adPlaceId;
@@ -44,6 +46,8 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
         setContentView(R.layout.activity_native_model);
         btnLoad = findViewById(R.id.btn_load);
         adView = findViewById(R.id.ll_adView);
+        adView2 = findViewById(R.id.ll_adView2);
+        adView3 = findViewById(R.id.ll_adView3);
         radioGroup = findViewById(R.id.radioGroupId);
         radioGroup.setOnCheckedChangeListener(this);
         btnLoad.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +59,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
 
 
         adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010042");
+        adcdnNativeExpressView.setAdCount(3);//请求广告的数量（1~3），最多一次请求3个广告
         //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
         loadAd();
     }
@@ -67,12 +72,29 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
         adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
 
             @Override
-            public void onADReceiv(View view) {
-                adView.removeAllViews();
-                adView.addView(view);
-
+            public void onADLoaded(List<NativeExpressADDatas> adList) {
                 Log.e(TAG, "广告下载成功 ::::: ");
-                Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+                adView.removeAllViews();
+                adView2.removeAllViews();
+                adView3.removeAllViews();
+                if (adList.size() > 0) {
+                    adView.addView(adList.get(0).getADView());
+                    adList.get(0).render();
+                }
+                if (adList.size() > 1) {
+                    adView2.addView(adList.get(1).getADView());
+                    adList.get(1).render();
+                }
+                if (adList.size() > 2) {
+                    adView3.addView(adList.get(2).getADView());
+                    adList.get(2).render();
+                }
+            }
+
+            @Override
+            public void onRenderSuccess(View view) {
+                Log.e(TAG, "广告渲染成功 ::::: ");
+//                Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
 
             }
 
@@ -114,6 +136,8 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
             @Override
             public void onADReceiv(NativeModelADDatas nativeModelADDatas) {
                 adView.removeAllViews();
+                adView2.removeAllViews();
+                adView3.removeAllViews();
                 adView.addView(nativeModelADDatas.getADView());
                 nativeModelADDatas.onExposured(adView);//必须调用此方法，否则影响计费
 

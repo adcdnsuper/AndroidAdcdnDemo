@@ -60,12 +60,14 @@ public class NativeActivity extends Activity {
                 if (mNativeADData != null) {
                     showAD();
                 }
+                Log.e(TAG, "广告下载成功");
                 Toast.makeText(NativeActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onADError(String error) {
+                Log.e(TAG, "广告下载失败 ");
                 Toast.makeText(NativeActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
 
             }
