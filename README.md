@@ -161,7 +161,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ```
 ### 4.5 原生模板广告示例
 ```
- adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010042");
+ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plcId");
         adcdnNativeExpressView.setAdCount(3);//请求广告的数量（1~3），最多一次请求3个广告
         //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
  adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
