@@ -161,44 +161,62 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ```
 ### 4.5 原生模板广告示例
 ```
-adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plcId");
-    adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
-   
-               @Override
-               public void onADReceiv(View view) {
-                   adView.removeAllViews();
-                   adView.addView(view);
-   
-                   Log.e(TAG, "广告下载成功 ::::: ");
-                   Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
-   
-               }
-   
-               @Override
-               public void onADError(String error) {
-                   Toast.makeText(NativeExpressActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
-   
-               }
-   
-               @Override
-               public void onExposured(View view) {
-                   Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-               }
-   
-               @Override
-               public void onClicked(View view) {
-                   Log.e(TAG, "广告被点击了 ::::: ");
-   
-               }
-   
-               @Override
-               public void onAdClose(View view) {
-   
-               }
-   
-   
-           });
-          });
+ adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010042");
+        adcdnNativeExpressView.setAdCount(3);//请求广告的数量（1~3），最多一次请求3个广告
+        //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
+ adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
+
+            @Override
+            public void onADLoaded(List<NativeExpressADDatas> adList) {
+                Log.e(TAG, "广告下载成功 ::::: ");
+                adView.removeAllViews();
+                adView2.removeAllViews();
+                adView3.removeAllViews();
+                if (adList.size() > 0) {
+                    adView.addView(adList.get(0).getADView());
+                    adList.get(0).render();
+                }
+                if (adList.size() > 1) {
+                    adView2.addView(adList.get(1).getADView());
+                    adList.get(1).render();
+                }
+                if (adList.size() > 2) {
+                    adView3.addView(adList.get(2).getADView());
+                    adList.get(2).render();
+                }
+            }
+
+            @Override
+            public void onRenderSuccess(View view) {
+                Log.e(TAG, "广告渲染成功 ::::: ");
+//                Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onADError(String error) {
+                Toast.makeText(NativeExpressActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onExposured(View view) {
+                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+            }
+
+            @Override
+            public void onClicked(View view) {
+                Log.e(TAG, "广告被点击了 ::::: ");
+
+            }
+
+            @Override
+            public void onAdClose(View view) {
+
+            }
+
+
+        });
 ```
 ### 4.5.1 原生模板纯图广告示例
 ```
