@@ -136,29 +136,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
         // 开始获取广告
         adcdnBannerView.loadAd();
 ```
-### 4.4 原生广告示例
-```
-  adcdnNativeView = new AdcdnNativeView(this, "请填写对应的plcId");
- adcdnNativeView.loadAd(new AdcdnNativeAdListener() {
-             @Override
-             public void onADLoaded(NativeADDatas nativeADData) {
-                 mNativeADData = nativeADData;
-                 if (mNativeADData != null) {
-                     //根据广告内容自行渲染布局
-                 }
- //                Toast.makeText(NativeActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
 
-             }
-
-             @Override
-             public void onADError(String error) {
-                 Toast.makeText(NativeActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
-
-             }
-
-
-         });
-```
 ### 4.5 原生模板广告示例
 ```
  adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plcId");
