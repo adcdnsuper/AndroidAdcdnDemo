@@ -18,6 +18,8 @@ import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnNativeAdListener;
 import com.yunxia.adsdk.tpadmobsdk.ad.nativead.AdcdnNativeView;
 import com.yunxia.adsdk.tpadmobsdk.entity.NativeADDatas;
 
+import java.util.List;
+
 /**
  * @author : ciba
  * @date : 2018/6/28
@@ -27,7 +29,6 @@ import com.yunxia.adsdk.tpadmobsdk.entity.NativeADDatas;
 public class NativeActivity extends Activity {
     private static final String TAG = "ADCDN_Log";
     private AdcdnNativeView adcdnNativeView;
-    private NativeADDatas mNativeADData;
 
     private Button btnLoad;
     protected AQuery aQuery;
@@ -48,42 +49,27 @@ public class NativeActivity extends Activity {
         });
 
         adcdnNativeView = new AdcdnNativeView(this, "1010210");
+        adcdnNativeView.setAdCount(3);
         loadAd();
 
     }
 
     private void loadAd() {
         adcdnNativeView.loadAd(new AdcdnNativeAdListener() {
+
             @Override
-            public void onADLoaded(NativeADDatas nativeADData) {
-                mNativeADData = nativeADData;
-                if (mNativeADData != null) {
-                    showAD();
+            public void onADLoaded(List<NativeADDatas> nativeADData) {
+                Log.e(TAG, nativeADData.size() + "");
+                if (nativeADData.size() > 0) {
+                    showAD(nativeADData.get(0));
                 }
-                Log.e(TAG, "广告下载成功");
                 Toast.makeText(NativeActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onADError(String error) {
-                Log.e(TAG, "广告下载失败 ");
                 Toast.makeText(NativeActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onExposured() {
-                Toast.makeText(NativeActivity.this, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ", Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-
-            }
-
-            @Override
-            public void onClicked() {
-                Toast.makeText(NativeActivity.this, "广告被点击了 ::::: ", Toast.LENGTH_SHORT).show();
-
-                Log.e(TAG, "广告被点击了 ::::: ");
 
             }
 
@@ -96,7 +82,7 @@ public class NativeActivity extends Activity {
     /**
      * 展示原生广告时，一定要调用onExposured接口曝光广告
      */
-    public void showAD() {
+    public void showAD(NativeADDatas mNativeADData) {
         videoView = findViewById(R.id.ly_video);
         if (mNativeADData.getAdPatternType() == AdcdnNativeView.NATIVE_3IMAGE && mNativeADData.getImgList().size() >= 3) {
             findViewById(R.id.native_3img_ad_container).setVisibility(View.VISIBLE);
@@ -148,7 +134,21 @@ public class NativeActivity extends Activity {
         } else {
             aQuery.id(R.id.tv_source).text("广告·" + mNativeADData.getSource());
         }
-        mNativeADData.onExposured(this.findViewById(R.id.nativeADContainer)); // 必须调用曝光接口
+
+        // 必须调用此方法，否则影响计费
+        mNativeADData.registerViewForInteraction(this.findViewById(R.id.nativeADContainer), new NativeADDatas.AdInteractionListener() {
+            @Override
+            public void onAdClicked(NativeADDatas var2) {
+                Toast.makeText(NativeActivity.this, "广告被点击", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onAdShow(NativeADDatas var1) {
+                Toast.makeText(NativeActivity.this, "广告展示", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     @Override
