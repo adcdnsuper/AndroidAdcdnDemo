@@ -76,6 +76,7 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation "com.github.bumptech.glide:glide:3.6.0"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

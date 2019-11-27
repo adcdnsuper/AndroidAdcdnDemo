@@ -49,7 +49,7 @@ public class NativeActivity extends Activity {
         });
 
         adcdnNativeView = new AdcdnNativeView(this, "1010210");
-        adcdnNativeView.setAdCount(3);
+        adcdnNativeView.setAdCount(1);//请求广告的数量，最多请求3个
         loadAd();
 
     }

@@ -8,6 +8,7 @@ import com.adcdn.addemo.banner.BannerActivity;
 import com.adcdn.addemo.information.InformationActivity;
 import com.adcdn.addemo.nativead.NativeActivity;
 import com.adcdn.addemo.nativead.NativeExpressActivity;
+import com.adcdn.addemo.nativead.NativeListActivity;
 import com.adcdn.addemo.nativead.NativeModelActivity;
 import com.adcdn.addemo.splash.SplashActivity2;
 import com.adcdn.addemo.video.FullVideoActivity;
@@ -116,5 +117,13 @@ public class MainActivity extends AppCompatActivity {
                 NativeActivity.jumpHere(MainActivity.this);
             }
         });
+
+        findViewById(R.id.tvNativeFeedList).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NativeListActivity.jumpHere(MainActivity.this);
+            }
+        });
+
     }
 }
