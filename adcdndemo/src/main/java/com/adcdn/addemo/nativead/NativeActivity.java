@@ -80,7 +80,7 @@ public class NativeActivity extends Activity {
 
 
     /**
-     * 展示原生广告时，一定要调用onExposured接口曝光广告
+     * 展示原生广告时，一定要调用registerViewForInteraction接口曝光广告
      */
     public void showAD(NativeADDatas mNativeADData) {
         videoView = findViewById(R.id.ly_video);
