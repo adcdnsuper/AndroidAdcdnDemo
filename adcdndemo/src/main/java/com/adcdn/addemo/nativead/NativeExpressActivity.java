@@ -73,7 +73,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
 
             @Override
             public void onADLoaded(List<NativeExpressADDatas> adList) {
-                Log.e(TAG, "广告下载成功 ::::: ");
+                Log.e(TAG, "广告下载成功 ::::: " + adList.size());
                 adView.removeAllViews();
                 adView2.removeAllViews();
                 adView3.removeAllViews();
@@ -125,53 +125,6 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
 
     }
 
-    /**
-     * 纯图广告调用方法（注意不同于上面模板调用方法）
-     */
-    private void loadPicAd() {
-        AdcdnNativeModelView adcdnNativeModelView = new AdcdnNativeModelView(this, "1010033");
-//        adcdnNativeModelView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));// 设置广告宽高，不设置默认宽高
-        adcdnNativeModelView.loadAd(new AdcdnNativeModelAdListener() {
-
-            @Override
-            public void onADReceiv(NativeModelADDatas nativeModelADDatas) {
-                adView.removeAllViews();
-                adView2.removeAllViews();
-                adView3.removeAllViews();
-                adView.addView(nativeModelADDatas.getADView());
-                nativeModelADDatas.onExposured(adView);//必须调用此方法，否则影响计费
-
-                Log.e(TAG, "广告下载成功 ::::: ");
-                Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onADError(String error) {
-                Toast.makeText(NativeExpressActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onExposured() {
-                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-            }
-
-            @Override
-            public void onClicked() {
-                Log.e(TAG, "广告被点击了 ::::: ");
-
-            }
-
-            @Override
-            public void onAdClose() {
-
-            }
-
-
-        });
-
-    }
 
     @Override
     protected void onDestroy() {
@@ -215,10 +168,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
                 adcdnNativeExpressView.setAdId("1010039");
                 loadAd();
                 break;
-            case R.id.rb7://纯图广告
-                adcdnNativeExpressView.setAdId("1010039");
-                loadPicAd();
-                break;
+
 
         }
 
