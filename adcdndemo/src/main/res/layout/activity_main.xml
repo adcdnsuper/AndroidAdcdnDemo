@@ -59,6 +59,7 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
+            android:visibility="gone"
             android:text="原生自渲染广告" />
 
         <TextView
@@ -69,6 +70,7 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
+            android:visibility="gone"
             android:text="原生自渲染列表广告" />
 
         <TextView
