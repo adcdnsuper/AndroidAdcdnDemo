@@ -445,6 +445,15 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
         
         //销毁时调用
           adcdnGameAdView.destroy();//注意要在 super.onDestroy()之前调用
+          
+          
+        //注意：需要在activity的onBackPressed()调用以下方法来处理内部H5页面的物理返回按钮
+         @Override
+            public void onBackPressed() {
+                if (!adcdnGameAdView.backWebview()) {
+                    finish();
+                }
+            }
 ```
 
 注意事项：
