@@ -10,6 +10,7 @@ import com.adcdn.addemo.nativead.NativeActivity;
 import com.adcdn.addemo.nativead.NativeExpressActivity;
 import com.adcdn.addemo.nativead.NativeListActivity;
 import com.adcdn.addemo.nativead.NativeModelActivity;
+import com.adcdn.addemo.scene.SceneActivity;
 import com.adcdn.addemo.splash.SplashActivity2;
 import com.adcdn.addemo.video.FullVideoActivity;
 import com.adcdn.addemo.video.VideoActivity;
@@ -122,6 +123,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 NativeListActivity.jumpHere(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.tvScene).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SceneActivity.jumpHere(MainActivity.this);
             }
         });
 

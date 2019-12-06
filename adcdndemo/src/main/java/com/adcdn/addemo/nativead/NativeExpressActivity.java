@@ -68,32 +68,29 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
     /**
      * 模板调用方法（三小图，上文下图，左图右文，左文右图，文字浮沉，文字浮层上文下图）
      */
+    NativeExpressADDatas nativeExpressADDatas;
+
     private void loadAd() {
         adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
 
             @Override
             public void onADLoaded(List<NativeExpressADDatas> adList) {
                 Log.e(TAG, "广告下载成功 ::::: " + adList.size());
-                adView.removeAllViews();
-                adView2.removeAllViews();
-                adView3.removeAllViews();
                 if (adList.size() > 0) {
-                    adView.addView(adList.get(0).getADView());
-                    adList.get(0).render();
+                    nativeExpressADDatas = adList.get(0);
+                    nativeExpressADDatas.render();
                 }
-                if (adList.size() > 1) {
-                    adView2.addView(adList.get(1).getADView());
-                    adList.get(1).render();
-                }
-                if (adList.size() > 2) {
-                    adView3.addView(adList.get(2).getADView());
-                    adList.get(2).render();
-                }
+
             }
 
             @Override
             public void onRenderSuccess(View view) {
                 Log.e(TAG, "广告渲染成功 ::::: ");
+
+                if (nativeExpressADDatas != null) {
+                    adView.removeAllViews();
+                    adView.addView(nativeExpressADDatas.getADView());
+                }
 //                Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
 
             }

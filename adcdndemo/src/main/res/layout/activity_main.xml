@@ -38,8 +38,8 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
-            android:visibility="gone"
-            android:text="原生广告" />
+            android:text="原生广告"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvNativeEx"
@@ -59,8 +59,8 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
-            android:visibility="gone"
-            android:text="原生自渲染广告" />
+            android:text="原生自渲染广告"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvNativeFeedList"
@@ -70,8 +70,8 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
-            android:visibility="gone"
-            android:text="原生自渲染列表广告" />
+            android:text="原生自渲染列表广告"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvNativePic"
@@ -81,8 +81,8 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
-            android:visibility="gone"
-            android:text="原生纯图模板广告" />
+            android:text="原生纯图模板广告"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvNativeViewPage"
@@ -92,8 +92,8 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
-            android:visibility="gone"
-            android:text="原生广告ViewPage" />
+            android:text="原生广告ViewPage"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvInsert"
@@ -113,8 +113,8 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
-            android:visibility="gone"
-            android:text="信息流广告" />
+            android:text="信息流广告"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvInformationImageOnly"
@@ -123,9 +123,9 @@
             android:layout_marginTop="10dp"
             android:background="#fff"
             android:elevation="5dp"
-            android:visibility="gone"
             android:gravity="center"
-            android:text="图片信息流" />
+            android:text="图片信息流"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvInformationRightImage"
@@ -190,6 +190,16 @@
             android:elevation="5dp"
             android:gravity="center"
             android:text="全屏视频广告(可跳过)" />
+
+        <TextView
+            android:id="@+id/tvScene"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:text="场景广告" />
 
     </LinearLayout>
 </RelativeLayout>

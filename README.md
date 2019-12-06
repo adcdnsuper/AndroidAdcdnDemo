@@ -414,6 +414,39 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
                  });
 ```
 
+### 4.9 场景广告示例
+```
+ AdGameSlot adSlot = new AdGameSlot.Builder()
+                .setAppId("10001")//场景的appId
+                .setGameId("10001")//场景的id
+                .setUserId("112247")//用户id
+                .setExpressAdId("1010038")//原生模板广告id（上文下浮层）
+                .setExpressAdId2("1010039")//原生模板广告id（文字浮层）
+                .setVideoAdId("1010152")//激励视频id
+                .build();
+        adcdnGameAdView = new AdcdnGameAdView(this, adSlot);
+        adcdnGameAdView.setGameListener(new GameADDatas() {
+            @Override
+            public void startShare(AdcdnShareDatas adcdnShareDatas) {
+                //客户端自行调用分享
+                Log.e(TAG, "分享" + adcdnShareDatas.getUrl() + adcdnShareDatas.getTitle() + adcdnShareDatas.getDesc());
+                adcdnShareDatas.beanShare();//分享后需要调用！
+            }
+
+            @Override
+            public void startLogin() {
+                //客户端可以在这里处理登录
+                Log.e(TAG, "登录");
+
+            }
+        });
+        adcdnGameAdView.loadWebView();
+        flContainer.addView(adcdnGameAdView);
+        
+        //销毁时调用
+          adcdnGameAdView.destroy();//注意要在 super.onDestroy()之前调用
+```
+
 注意事项：
 在不使用的时候（退出activity等）记得及时释放广告资源
 
