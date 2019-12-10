@@ -32,9 +32,11 @@ public class SceneActivity extends Activity {
         flContainer = findViewById(R.id.flContainer);
 
         AdGameSlot adSlot = new AdGameSlot.Builder()
-                .setAppId("10001")//场景的appId
-                .setGameId("10001")//场景的id
-                .setUserId("112247")//用户id
+                .setAppId("10001")//场景的appId，必传
+                .setGameId("10001")//场景的id，必传
+//                .setUserId("112245")//用户id，没有就不传
+//                .setNickname("用户123")//用户昵称，没有就不传
+//                .setAvatarUrl("图片地址")//没有就不传
                 .setExpressAdId("1010038")//原生模板广告id（上文下浮层）
                 .setExpressAdId2("1010039")//原生模板广告id（文字浮层）
                 .setVideoAdId("1010152")//激励视频id
@@ -55,7 +57,7 @@ public class SceneActivity extends Activity {
 
             }
         });
-        adcdnGameAdView.setTest(true);
+//        adcdnGameAdView.setTest(true);
         adcdnGameAdView.loadWebView();
         flContainer.addView(adcdnGameAdView);
 
