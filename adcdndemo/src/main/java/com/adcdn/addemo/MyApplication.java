@@ -3,6 +3,7 @@ package com.adcdn.addemo;
 import android.app.Application;
 import android.content.Context;
 
+import com.yunxia.adsdk.tpadmobsdk.change.AdcdnLogTool;
 import com.yunxia.adsdk.tpadmobsdk.common.AdcdnMobSDK;
 
 
@@ -23,6 +24,7 @@ public class MyApplication extends Application {
         super.onCreate();
         // TODO: 2019/5/5 修改为自己的appId
         AdcdnMobSDK.instance().initSdk(getApplicationContext(), APP_ID);
+        AdcdnLogTool.isNeedShow = true;//日志开关，测试的时候可以打开
 
     }
 
