@@ -417,13 +417,15 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 ### 4.9 场景广告示例
 ```
  AdGameSlot adSlot = new AdGameSlot.Builder()
-                .setAppId("10001")//场景的appId
-                .setGameId("10001")//场景的id
-                .setUserId("112247")//用户id
-                .setExpressAdId("1010038")//原生模板广告id（上文下浮层）
-                .setExpressAdId2("1010039")//原生模板广告id（文字浮层）
-                .setVideoAdId("1010152")//激励视频id
-                .build();
+                 .setAppId("10001")//场景的appId，必传
+                 .setGameId("10001")//场景的id，必传
+ //                .setUserId("112245")//用户id，没有就不传
+ //                .setNickname("用户123")//用户昵称，没有就不传
+ //                .setAvatarUrl("图片地址")//没有就不传
+                 .setExpressAdId("1010038")//原生模板广告id（上文下浮层）
+                 .setExpressAdId2("1010039")//原生模板广告id（文字浮层）
+                 .setVideoAdId("1010152")//激励视频id
+                 .build();
         adcdnGameAdView = new AdcdnGameAdView(this, adSlot);
         adcdnGameAdView.setGameListener(new GameADDatas() {
             @Override
