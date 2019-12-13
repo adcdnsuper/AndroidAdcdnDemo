@@ -57,7 +57,7 @@ public class SceneActivity extends Activity {
 
             }
         });
-//        adcdnGameAdView.setTest(true);
+//        adcdnGameAdView.setTest(true);//测试环境打开
         adcdnGameAdView.loadWebView();
         flContainer.addView(adcdnGameAdView);
 
