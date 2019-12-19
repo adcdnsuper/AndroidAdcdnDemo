@@ -31,8 +31,7 @@
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
         <activity
             android:name="com.adcdn.addemo.splash.SplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/splash">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,7 +41,7 @@
         <activity
             android:name="com.adcdn.addemo.splash.SplashActivity2"
             android:screenOrientation="portrait"
-            android:theme="@style/splash" />
+            />
         <activity
             android:name="com.adcdn.addemo.MainActivity"
             android:screenOrientation="portrait" />
