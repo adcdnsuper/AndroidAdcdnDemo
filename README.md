@@ -59,7 +59,7 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
 提示：appid请联系商务获取，并在Application的onCreat()方法中进行SDK初始化
 
 ```
-// TODO: 2018/10/22 修改为自己的appId 测试id = 2
+// TODO: 2018/10/22 修改为自己的appId
      AdcdnMobSDK.instance().initSdk(getApplicationContext(), APP_ID);
 ```
 ### 4.2 开屏广告示例
