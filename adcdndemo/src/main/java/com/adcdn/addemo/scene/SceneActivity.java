@@ -45,7 +45,7 @@ public class SceneActivity extends Activity {
         adcdnGameAdView.setGameListener(new GameADDatas() {
             @Override
             public void startShare(AdcdnShareDatas adcdnShareDatas) {
-                //客户端自行调用分享
+                //客户端自行调用分享，可分享自己的链接和内容
                 Log.e(TAG, "分享" + adcdnShareDatas.getUrl() + adcdnShareDatas.getTitle() + adcdnShareDatas.getDesc());
                 adcdnShareDatas.beanShare();//分享后需要调用！
             }
