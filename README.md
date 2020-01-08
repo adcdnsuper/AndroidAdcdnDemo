@@ -37,6 +37,8 @@ android {
 **注意事项
 
 *如果项目中集成了重复的其他广告平台sdk尽量移除避免冲突
+*确保所使用的 android-support-v4.jar 包中的 android.support.v4.app.NotificationCompat.Builder 类包含 setProgress 方法，如果不包含此方法请升级 android 开发套件
+
 ### 3.2权限申请
 使用sdk时可能需要以下权限，为了保证使用广告的正确，请在6.0以及以上的手机中使用sdk前及时申请
 ```
