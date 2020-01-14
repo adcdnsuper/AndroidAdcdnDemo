@@ -515,9 +515,12 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
         name="external_files_path"
         path="Download" />
     <!-- 腾讯下载配置-->
-    <external-path
-        name="gdt_sdk_download_path"
-        path="GDTDOWNLOAD" />
+        <external-cache-path
+            name="gdt_sdk_download_path1"
+            path="com_qq_e_download" />
+        <cache-path
+            name="gdt_sdk_download_path2"
+            path="com_qq_e_download" />
 </paths>
 ```
 为了适配下载和安装相关功能，在工程中引用包 com.android.support:support-v4:24.2.0 使用24.2.0以及以上版本
