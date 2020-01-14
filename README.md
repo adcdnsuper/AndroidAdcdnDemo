@@ -421,9 +421,9 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
  AdGameSlot adSlot = new AdGameSlot.Builder()
                  .setAppId("10001")//场景的appId，必传
                  .setGameId("10001")//场景的id，必传
- //                .setUserId("112245")//用户id，没有就不传
- //                .setNickname("用户123")//用户昵称，没有就不传
- //                .setAvatarUrl("图片地址")//没有就不传
+//                .setUserId("112245")//用户id，未登录可以不传，登录后必传，否则影响用户唯一性
+//                .setNickname("用户123")//用户昵称，没有就不传
+//                .setAvatarUrl("图片地址")//用户头像，没有就不传
                  .setExpressAdId("1010038")//原生模板广告id（上文下浮层）
                  .setExpressAdId2("1010039")//原生模板广告id（文字浮层）
                  .setVideoAdId("1010152")//激励视频id
