@@ -503,13 +503,7 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--百度下载配置-->
-    <external-files-path
-        name="bdpath"
-        path="bddownload/" />
-    <external-path
-        name="bdpathsd"
-        path="bddownload/" />
+
     <!-- 头条下载配置-->
     <external-files-path
         name="external_files_path"
