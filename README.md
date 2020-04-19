@@ -23,12 +23,12 @@ android {
    ....
    //2.添加依赖包
      //必须的依赖包
- implementation(name:	'adcdnsdk-1.0',	ext:	'aar')
+ implementation(name:	'adcdnsdk_6.0_20200419',	ext:	'aar')
  implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
- implementation(name:	'gdt-release',	ext:	'aar')
- implementation(name:	'gdt_1.0.5_20191028',	ext:	'aar')
- implementation(name:	'toutiao-release',	ext:	'aar')
+ implementation(name:	'GDTSDK.unionNormal.4.110.980',	ext:	'aar')
+ implementation(name:	'gdt_1.0.9_20200102',	ext:	'aar')
+ implementation(name:	'toutiao-1.0.9_20200102',	ext:	'aar')
  implementation(name:	'open_ad_sdk',	ext:	'aar')
 
 
@@ -416,36 +416,29 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
                  });
 ```
 
-### 4.9 场景广告示例
+### 4.9 游戏盒子接入示例
 ```
- AdGameSlot adSlot = new AdGameSlot.Builder()
-                 .setAppId("10001")//场景的appId，必传
-                 .setGameId("10001")//场景的id，必传
-//                .setUserId("112245")//用户id，未登录可以不传，登录后必传，否则影响用户唯一性
-//                .setNickname("用户123")//用户昵称，没有就不传
-//                .setAvatarUrl("图片地址")//用户头像，没有就不传
-                 .setExpressAdId("1010038")//原生模板广告id（上文下浮层）
-                 .setExpressAdId2("1010039")//原生模板广告id（文字浮层）
-                 .setVideoAdId("1010152")//激励视频id
-                 .build();
-        adcdnGameAdView = new AdcdnGameAdView(this, adSlot);
-        adcdnGameAdView.setGameListener(new GameADDatas() {
-            @Override
-            public void startShare(AdcdnShareDatas adcdnShareDatas) {
-                //客户端自行调用分享
-                Log.e(TAG, "分享" + adcdnShareDatas.getUrl() + adcdnShareDatas.getTitle() + adcdnShareDatas.getDesc());
-                adcdnShareDatas.beanShare();//分享后需要调用！
-            }
 
+        AdGameBoxSlot adSlot = new AdGameBoxSlot.Builder()
+                .setUserId("16")//使用app的userid（如果没有用户体系或者用户未登陆可以不传）
+                .setExistNav("1")//游戏盒子首页是否需要退出按钮（1：需要，0：不需要）
+                .setUserSyetem("1")//app是否有用户体系
+                .setNickname("demo")//用户昵称
+                .setAvatarUrl("http://b-ssl.duitang.com/uploads/item/201410/09/20141009224754_AswrQ.jpeg")//用户头像
+                .build();
+        adcdnGameAdView = new AdcdnGameBox(this, adSlot, new GameBoxDatas() {
             @Override
             public void startLogin() {
-                //客户端可以在这里处理登录
-                Log.e(TAG, "登录");
+                //在这个回调跳转app的登陆界面
+                Log.e("xnn", "登录");
 
             }
         });
+
         adcdnGameAdView.loadWebView();
         flContainer.addView(adcdnGameAdView);
+
+        int scenesSwitch = AdcdnMobSDK.instance().getScenesSwitch();//如果不等于1，说明游戏盒子被关闭，可以在外部路口隐藏游戏盒子
         
         //销毁时调用
           adcdnGameAdView.destroy();//注意要在 super.onDestroy()之前调用
