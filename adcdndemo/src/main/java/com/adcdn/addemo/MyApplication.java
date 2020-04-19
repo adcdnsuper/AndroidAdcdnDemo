@@ -16,7 +16,7 @@ import com.yunxia.adsdk.tpadmobsdk.common.AdcdnMobSDK;
 public class MyApplication extends Application {
 
     //    private String APP_ID = "30072";
-    private String APP_ID = "1030015";
+    private String APP_ID = "600009";
 //    private String APP_ID = "1030076";
 
     @Override

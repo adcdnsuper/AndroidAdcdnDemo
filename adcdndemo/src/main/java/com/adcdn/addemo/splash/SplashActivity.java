@@ -13,6 +13,7 @@ import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.adcdn.addemo.Constant;
 import com.adcdn.addemo.MainActivity;
 import com.yunxia.addemo.R;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnSplashAdListener;
@@ -53,7 +54,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void initAd() {
 
-        adcdnSplashView = new AdcdnSplashView(this, "1010029", flContainer);
+        adcdnSplashView = new AdcdnSplashView(this, Constant.AD_SPLASH, flContainer);
 //        adcdnSplashView = new AdcdnSplashView(this, "1000379", flContainer);
         adcdnSplashView.setListener(new AdcdnSplashAdListener() {
             @Override

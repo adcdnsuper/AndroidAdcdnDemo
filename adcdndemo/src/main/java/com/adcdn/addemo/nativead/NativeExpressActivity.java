@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.adcdn.addemo.Constant;
 import com.yunxia.addemo.R;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnNativeExpressAdListener;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnNativeModelAdListener;
@@ -59,8 +60,8 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
         });
 
 
-        adcdnNativeExpressView = new AdcdnNativeExpressView(this, "1010042");
-        adcdnNativeExpressView.setAdCount(3);//请求广告的数量（1~3），最多一次请求3个广告
+        adcdnNativeExpressView = new AdcdnNativeExpressView(this,  Constant.AD_NATIVE_3IMG);
+        adcdnNativeExpressView.setAdCount(1);//请求广告的数量（1~3），最多一次请求3个广告
         //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
         loadAd();
     }
@@ -143,27 +144,27 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (group.getCheckedRadioButtonId()) {
             case R.id.rb1://三小图
-                adcdnNativeExpressView.setAdId("1010042");
+                adcdnNativeExpressView.setAdId(Constant.AD_NATIVE_3IMG);
                 loadAd();
                 break;
             case R.id.rb2://上文下图
-                adcdnNativeExpressView.setAdId("1010043");
+                adcdnNativeExpressView.setAdId(Constant.AD_NATIVE_1IMG);
                 loadAd();
                 break;
             case R.id.rb3://左图右文
-                adcdnNativeExpressView.setAdId("1010040");
+                adcdnNativeExpressView.setAdId(Constant.AD_NATIVE_1IMG_L);
                 loadAd();
                 break;
             case R.id.rb4://左文右图
-                adcdnNativeExpressView.setAdId("1010041");
+                adcdnNativeExpressView.setAdId(Constant.AD_NATIVE_1IMG_R);
                 loadAd();
                 break;
             case R.id.rb5://文字浮层
-                adcdnNativeExpressView.setAdId("1010038");
+                adcdnNativeExpressView.setAdId(Constant.AD_NATIVE_1IMG_F);
                 loadAd();
                 break;
             case R.id.rb6://文字浮层（上文下图）
-                adcdnNativeExpressView.setAdId("1010039");
+                adcdnNativeExpressView.setAdId(Constant.AD_NATIVE_1IMG_SF);
                 loadAd();
                 break;
 

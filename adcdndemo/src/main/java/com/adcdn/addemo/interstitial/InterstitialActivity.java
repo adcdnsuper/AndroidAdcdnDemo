@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.adcdn.addemo.Constant;
 import com.yunxia.addemo.R;
 import com.yunxia.adsdk.tpadmobsdk.ad.insert.AdcdnInsertView;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnInsertitailAdListener;
@@ -28,7 +29,7 @@ public class InterstitialActivity  extends AppCompatActivity {
 
     public void showAd(View v){
         showProgressDialog();
-        adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this,"1010031");
+        adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this, Constant.AD_INSTERST);
         adcdnInsertView.setListener(new AdcdnInsertitailAdListener() {
             @Override
             public void onADExposure() {

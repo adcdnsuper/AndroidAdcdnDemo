@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.adcdn.addemo.Constant;
 import com.yunxia.addemo.R;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnVideoAdListener;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnVideoLoadListener;
@@ -50,7 +51,7 @@ public class VideoActivity extends Activity {
         });
 
         AdVideoSlot adSlot = new AdVideoSlot.Builder()
-                .setCodeId("1010152")
+                .setCodeId( Constant.AD_VIDEOREWARD)
                 .setSupportDeepLink(true)
                 .setImageAcceptedSize(1080, 1920)
                 .setRewardName("金币") //奖励的名称

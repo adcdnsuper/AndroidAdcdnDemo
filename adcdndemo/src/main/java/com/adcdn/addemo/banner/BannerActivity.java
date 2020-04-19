@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.FrameLayout;
 
+import com.adcdn.addemo.Constant;
 import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.yunxia.addemo.R;
 import com.yunxia.adsdk.tpadmobsdk.ad.banner.AdcdnBannerView;
@@ -34,7 +35,7 @@ public class BannerActivity extends Activity {
         flContainer = findViewById(R.id.flContainer);
 
         // 初始化Banner广告
-        adcdnBannerView = new AdcdnBannerView(this,"1010032");
+        adcdnBannerView = new AdcdnBannerView(this, Constant.AD_BANNER);
         // 不设置banner广告尺寸大小则默认比例为: 640*100;
 //        adcdnBannerView.setADSize(w,h);//期望模板广告view的size,单位dp
         // 设置广告监听（不设置也行）

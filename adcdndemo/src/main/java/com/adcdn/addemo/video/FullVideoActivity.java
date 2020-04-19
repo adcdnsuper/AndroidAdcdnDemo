@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.adcdn.addemo.Constant;
 import com.yunxia.addemo.R;
 import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnVideoFullAdListener;
 import com.yunxia.adsdk.tpadmobsdk.ad.video.AdcdnFullVideoView;
@@ -49,7 +50,7 @@ public class FullVideoActivity extends Activity {
 
 
         //activity,位置id，期望视频方向(横屏AdcdnFullVideoView.HORIZONTAL，竖屏AdcdnFullVideoView.VERTICAL)
-        adcdnFullVideoView = new AdcdnFullVideoView(this, "1010113", AdcdnFullVideoView.VERTICAL);
+        adcdnFullVideoView = new AdcdnFullVideoView(this,  Constant.AD_VIDEOFULL, AdcdnFullVideoView.VERTICAL);
         // 设置广告监听（不设置也行）
         adcdnFullVideoView.setListener(new AdcdnVideoFullAdListener() {
 

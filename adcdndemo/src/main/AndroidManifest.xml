@@ -43,6 +43,9 @@
             android:screenOrientation="portrait"
             />
         <activity
+            android:name="com.adcdn.addemo.gamebox.GameCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.adcdn.addemo.MainActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -51,21 +54,7 @@
         <activity
             android:name="com.adcdn.addemo.interstitial.InterstitialActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.adcdn.addemo.information.InformationActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.adcdn.addemo.information.InformationImageOnlyActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.adcdn.addemo.nativead.NativeActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.adcdn.addemo.nativead.NativeListActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.adcdn.addemo.nativead.NativeModelActivity"
-            android:screenOrientation="portrait" />
+
 
         <activity
             android:name="com.adcdn.addemo.nativead.NativeExpressActivity"
