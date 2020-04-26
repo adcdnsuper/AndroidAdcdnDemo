@@ -1,10 +1,10 @@
 
--dontwarn com.yunxia.adsdk.**
--keep class com.yunxia.adsdk.**{*;}
--keep interface com.yunxia.adsdk.**{*;}
+-dontwarn com.adcdn.adsdk.**
+-keep class com.adcdn.adsdk.**{*;}
+-keep interface com.adcdn.adsdk.**{*;}
 -keep class com.android.**{*;}
--keep class com.yunxia.adsdk.toutiao.SdkInitImp
--keep class com.yunxia.adsdk.admobhttp.**{	*;	}
+-keep class com.adcdn.adsdk.toutiao.SdkInitImp
+-keep class com.adcdn.adsdk.admobhttp.**{	*;	}
 -keep class com.jaredrummler.android.processes.**{*;}
 -keep class com.jaredrummler.android.processes.models.**{*;}
 -keep class it.sauronsoftware.base64.**{*;}
