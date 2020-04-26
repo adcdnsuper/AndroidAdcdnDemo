@@ -27,8 +27,6 @@ android {
  implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
  implementation(name:	'GDTSDK.unionNormal.4.110.980',	ext:	'aar')
- implementation(name:	'gdt_1.0.9_20200102',	ext:	'aar')
- implementation(name:	'toutiao-1.0.9_20200102',	ext:	'aar')
  implementation(name:	'open_ad_sdk',	ext:	'aar')
 
 

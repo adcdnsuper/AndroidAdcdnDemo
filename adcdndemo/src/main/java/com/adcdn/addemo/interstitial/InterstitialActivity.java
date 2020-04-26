@@ -10,9 +10,9 @@ import android.util.Log;
 import android.view.View;
 
 import com.adcdn.addemo.Constant;
+import com.adcdn.adsdk.configsdk.ad.insert.AdcdnInsertView;
+import com.adcdn.adsdk.configsdk.ad.listener.AdcdnInsertitailAdListener;
 import com.yunxia.addemo.R;
-import com.yunxia.adsdk.tpadmobsdk.ad.insert.AdcdnInsertView;
-import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnInsertitailAdListener;
 
 /**
  * Created by Xnn on 2019/1/25 0025.

@@ -14,16 +14,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.adcdn.addemo.Constant;
+import com.adcdn.adsdk.configsdk.ad.listener.AdcdnNativeExpressAdListener;
+import com.adcdn.adsdk.configsdk.ad.nativemodel.AdcdnNativeExpressView;
+import com.adcdn.adsdk.configsdk.entity.NativeADDatas;
+import com.adcdn.adsdk.configsdk.entity.NativeExpressADDatas;
 import com.yunxia.addemo.R;
-import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnNativeExpressAdListener;
-import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnNativeModelAdListener;
-import com.yunxia.adsdk.tpadmobsdk.ad.nativemodel.AdcdnNativeExpressView;
-import com.yunxia.adsdk.tpadmobsdk.ad.nativemodel.AdcdnNativeModelView;
-import com.yunxia.adsdk.tpadmobsdk.common.AdcdnMobSDK;
-import com.yunxia.adsdk.tpadmobsdk.entity.MyADSize;
-import com.yunxia.adsdk.tpadmobsdk.entity.NativeADDatas;
-import com.yunxia.adsdk.tpadmobsdk.entity.NativeExpressADDatas;
-import com.yunxia.adsdk.tpadmobsdk.entity.NativeModelADDatas;
 
 import java.util.List;
 

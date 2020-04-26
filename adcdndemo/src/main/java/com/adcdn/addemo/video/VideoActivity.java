@@ -11,11 +11,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.adcdn.addemo.Constant;
+import com.adcdn.adsdk.configsdk.ad.listener.AdcdnVideoAdListener;
+import com.adcdn.adsdk.configsdk.ad.video.AdcdnVideoView;
+import com.adcdn.adsdk.configsdk.entity.AdVideoSlot;
 import com.yunxia.addemo.R;
-import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnVideoAdListener;
-import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnVideoLoadListener;
-import com.yunxia.adsdk.tpadmobsdk.ad.video.AdcdnVideoView;
-import com.yunxia.adsdk.tpadmobsdk.entity.AdVideoSlot;
 
 /**
  * @author : xnn

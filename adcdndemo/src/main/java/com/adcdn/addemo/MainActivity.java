@@ -7,7 +7,6 @@ import android.view.View;
 import com.adcdn.addemo.banner.BannerActivity;
 import com.adcdn.addemo.gamebox.GameCenterActivity;
 import com.adcdn.addemo.nativead.NativeExpressActivity;
-import com.adcdn.addemo.scene.SceneActivity;
 import com.adcdn.addemo.splash.SplashActivity2;
 import com.adcdn.addemo.video.FullVideoActivity;
 import com.adcdn.addemo.video.VideoActivity;

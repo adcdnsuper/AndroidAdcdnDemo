@@ -1,10 +1,9 @@
 package com.adcdn.addemo;
 
 import android.app.Application;
-import android.content.Context;
 
-import com.yunxia.adsdk.tpadmobsdk.change.AdcdnLogTool;
-import com.yunxia.adsdk.tpadmobsdk.common.AdcdnMobSDK;
+import com.adcdn.adsdk.configsdk.change.AdcdnLogTool;
+import com.adcdn.adsdk.configsdk.common.AdcdnMobSDK;
 
 
 /**

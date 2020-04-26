@@ -8,11 +8,11 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.FrameLayout;
 
+import com.adcdn.adsdk.commonsdk.GameBoxDatas;
+import com.adcdn.adsdk.configsdk.common.AdcdnMobSDK;
+import com.adcdn.adsdk.configsdk.entity.AdGameBoxSlot;
+import com.adcdn.adsdk.games.common.AdcdnGameBox;
 import com.yunxia.addemo.R;
-import com.yunxia.adsdk.commonsdk.GameBoxDatas;
-import com.yunxia.adsdk.games.common.AdcdnGameBox;
-import com.yunxia.adsdk.tpadmobsdk.common.AdcdnMobSDK;
-import com.yunxia.adsdk.tpadmobsdk.entity.AdGameBoxSlot;
 
 /**
  * @description : 游戏盒子接入

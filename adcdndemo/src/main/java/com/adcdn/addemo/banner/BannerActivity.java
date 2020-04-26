@@ -9,10 +9,10 @@ import android.util.Log;
 import android.widget.FrameLayout;
 
 import com.adcdn.addemo.Constant;
+import com.adcdn.adsdk.configsdk.ad.banner.AdcdnBannerView;
+import com.adcdn.adsdk.configsdk.ad.listener.AdcdnBannerAdListener;
 import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.yunxia.addemo.R;
-import com.yunxia.adsdk.tpadmobsdk.ad.banner.AdcdnBannerView;
-import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnBannerAdListener;
 
 /**
  * @author : xnn

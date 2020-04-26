@@ -10,9 +10,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.adcdn.addemo.Constant;
+import com.adcdn.adsdk.configsdk.ad.listener.AdcdnVideoFullAdListener;
+import com.adcdn.adsdk.configsdk.ad.video.AdcdnFullVideoView;
 import com.yunxia.addemo.R;
-import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnVideoFullAdListener;
-import com.yunxia.adsdk.tpadmobsdk.ad.video.AdcdnFullVideoView;
 
 /**
  * @author : ciba

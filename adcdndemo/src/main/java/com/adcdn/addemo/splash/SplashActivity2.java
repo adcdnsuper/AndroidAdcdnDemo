@@ -16,9 +16,9 @@ import android.widget.Toast;
 
 import com.adcdn.addemo.Constant;
 import com.adcdn.addemo.MainActivity;
+import com.adcdn.adsdk.configsdk.ad.listener.AdcdnSplashAdListener;
+import com.adcdn.adsdk.configsdk.ad.splash.AdcdnSplashView;
 import com.yunxia.addemo.R;
-import com.yunxia.adsdk.tpadmobsdk.ad.listener.AdcdnSplashAdListener;
-import com.yunxia.adsdk.tpadmobsdk.ad.splash.AdcdnSplashView;
 
 import java.util.ArrayList;
 import java.util.List;
