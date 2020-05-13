@@ -418,20 +418,9 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 ```
 
         AdGameBoxSlot adSlot = new AdGameBoxSlot.Builder()
-                .setUserId("16")//使用app的userid（如果没有用户体系或者用户未登陆可以不传）
-                .setExistNav("1")//游戏盒子首页是否需要退出按钮（1：需要，0：不需要）
-                .setUserSyetem("1")//app是否有用户体系
-                .setNickname("demo")//用户昵称
-                .setAvatarUrl("http://b-ssl.duitang.com/uploads/item/201410/09/20141009224754_AswrQ.jpeg")//用户头像
+                .setExistNav(true)//游戏盒子首页是否需要退出按钮
                 .build();
-        adcdnGameAdView = new AdcdnGameBox(this, adSlot, new GameBoxDatas() {
-            @Override
-            public void startLogin() {
-                //在这个回调跳转app的登陆界面
-                Log.e("xnn", "登录");
-
-            }
-        });
+        adcdnGameAdView = new AdcdnGameBox(this, adSlot);
 
         adcdnGameAdView.loadWebView();
         flContainer.addView(adcdnGameAdView);
@@ -441,14 +430,21 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
         //销毁时调用
           adcdnGameAdView.destroy();//注意要在 super.onDestroy()之前调用
           
+          //注意需要在onActivityResult设置以下，否则无法调用头像拍照
+          @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        adcdnGameAdView.setOnActivityResult(requestCode, resultCode, data);
+    }
           
-        //注意：需要在activity的onBackPressed()调用以下方法来处理内部H5页面的物理返回按钮
-         @Override
-            public void onBackPressed() {
-                if (!adcdnGameAdView.backWebview()) {
-                    finish();
-                }
-            }
+        //注意：如果需要在activity的onBackPressed()调用以下方法来处理内部H5页面的物理返回按钮
+           @Override
+    public void onBackPressed() {
+        if (!adcdnGameAdView.backWebview()) {
+            finish();
+        }
+    }
+    
 ```
 
 注意事项：

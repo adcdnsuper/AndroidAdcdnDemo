@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 头条下载配置-->
     <external-files-path
         name="external_files_path"
         path="Download" />
-
+    <!-- 腾讯下载配置-->
+    <!--<external-path-->
+    <!--name="gdt_sdk_download_path"-->
+    <!--path="GDTDOWNLOAD" />-->
     <external-cache-path
         name="gdt_sdk_download_path1"
         path="com_qq_e_download" />
     <cache-path
         name="gdt_sdk_download_path2"
         path="com_qq_e_download" />
+
+    <!-- ADCDN下载配置-->
+    <external-path
+        name="external_storage_root"
+        path="." />
+
 </paths>
