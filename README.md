@@ -425,8 +425,7 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
         adcdnGameAdView.loadWebView();
         flContainer.addView(adcdnGameAdView);
         
-        int scenesSwitch = AdcdnMobSDK.instance().getScenesSwitch();//如果等于0，说明游戏盒子被关闭，可以在外部路口隐藏游戏盒子
-       
+       int scenesSwitch = AdcdnMobSDK.instance().getScenesSwitch();//如果不等于1，说明游戏盒子被关闭，可以在外部路口隐藏游戏盒子
           //注意需要在onActivityResult设置以下，否则无法调用头像拍照
           @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

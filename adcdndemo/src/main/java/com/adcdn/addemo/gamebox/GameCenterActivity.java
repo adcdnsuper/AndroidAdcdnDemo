@@ -36,7 +36,7 @@ public class GameCenterActivity extends Activity {
         adcdnGameAdView = new AdcdnGameBox(this, adSlot);
         adcdnGameAdView.loadWebView();
         flContainer.addView(adcdnGameAdView);
-        int scenesSwitch = AdcdnMobSDK.instance().getScenesSwitch();//如果等于0，说明游戏盒子被关闭，可以在外部路口隐藏游戏盒子
+        int scenesSwitch = AdcdnMobSDK.instance().getScenesSwitch();//如果不等于1，说明游戏盒子被关闭，可以在外部路口隐藏游戏盒子
 
     }
 
