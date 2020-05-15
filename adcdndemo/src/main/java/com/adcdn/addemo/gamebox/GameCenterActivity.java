@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.FrameLayout;
 
-import com.adcdn.adsdk.commonsdk.GameBoxDatas;
 import com.adcdn.adsdk.configsdk.common.AdcdnMobSDK;
 import com.adcdn.adsdk.configsdk.entity.AdGameBoxSlot;
 import com.adcdn.adsdk.games.common.AdcdnGameBox;
@@ -31,17 +30,17 @@ public class GameCenterActivity extends Activity {
         flContainer = findViewById(R.id.flContainer);
 
         AdGameBoxSlot adSlot = new AdGameBoxSlot.Builder()
-                .setExistNav(true)//游戏盒子首页是否需要退出按钮
+                .setImmersive(true)//是否需要沉浸式状态栏显示游戏盒子
+                .setExistNav(true)//是否游戏盒子需要右上角退出按钮
                 .build();
         adcdnGameAdView = new AdcdnGameBox(this, adSlot);
-
         adcdnGameAdView.loadWebView();
         flContainer.addView(adcdnGameAdView);
-
-        int scenesSwitch = AdcdnMobSDK.instance().getScenesSwitch();//如果不等于1，说明游戏盒子被关闭，可以在外部路口隐藏游戏盒子
+        int scenesSwitch = AdcdnMobSDK.instance().getScenesSwitch();//如果等于0，说明游戏盒子被关闭，可以在外部路口隐藏游戏盒子
 
     }
 
+    //这个地方一定要设置，否则无法正常上传头像
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -50,8 +49,12 @@ public class GameCenterActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (!adcdnGameAdView.backWebview()) {
+        if (adcdnGameAdView == null) {
             finish();
+        } else {
+            if (!adcdnGameAdView.backWebview()) {
+                adcdnGameAdView.showBackDialog();//这里调用弹框确认是否退出，不要确认的话直接调用finish();
+            }
         }
     }
 
