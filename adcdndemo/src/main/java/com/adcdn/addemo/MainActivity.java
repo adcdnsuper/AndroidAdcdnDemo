@@ -1,8 +1,10 @@
 package com.adcdn.addemo;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.adcdn.addemo.banner.BannerActivity;
 import com.adcdn.addemo.gamebox.GameCenterActivity;
@@ -65,7 +67,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tvScene).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GameCenterActivity.jumpHere(MainActivity.this);
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                    Toast.makeText(MainActivity.this, "不支持低版本，仅支持android 5.0或以上版本!", Toast.LENGTH_LONG).show();
+                } else {
+                    GameCenterActivity.jumpHere(MainActivity.this);
+                }
             }
         });
 

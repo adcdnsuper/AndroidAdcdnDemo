@@ -15,6 +15,7 @@ import com.yunxia.addemo.R;
 
 /**
  * @description : 游戏盒子接入
+ * 目前只支持anrdoid 5.0或以上
  */
 
 public class GameCenterActivity extends Activity {

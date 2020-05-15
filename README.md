@@ -416,6 +416,7 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 
 ### 4.9 游戏盒子接入示例
 ```
+//注意：目前游戏盒子只支持anrdoid 5.0或以上
 
          AdGameBoxSlot adSlot = new AdGameBoxSlot.Builder()
                 .setImmersive(true)//是否需要沉浸式状态栏显示游戏盒子
