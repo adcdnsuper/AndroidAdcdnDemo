@@ -23,7 +23,7 @@ android {
    ....
    //2.添加依赖包
      //必须的依赖包
- implementation(name:	'adcdnsdk_6.0_20200419',	ext:	'aar')
+ implementation(name:	'adcdnsdk_7.0_20200515',	ext:	'aar')
  implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
  implementation(name:	'GDTSDK.unionNormal.4.110.980',	ext:	'aar')
@@ -52,6 +52,7 @@ android {
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> 
 <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" /> 
 <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+ <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
 ```
 PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NETWORK_STATE̵ACCESS_WIFI_STATE这几个权限请确保获取，否则可能无法获取广告 （可参考Demo中的SplashActivity）
 ## 4. 接入代码
@@ -505,12 +506,17 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
         name="external_files_path"
         path="Download" />
     <!-- 腾讯下载配置-->
-        <external-cache-path
-            name="gdt_sdk_download_path1"
-            path="com_qq_e_download" />
-        <cache-path
-            name="gdt_sdk_download_path2"
-            path="com_qq_e_download" />
+      <external-cache-path
+             name="gdt_sdk_download_path1"
+             path="com_qq_e_download" />
+         <cache-path
+             name="gdt_sdk_download_path2"
+             path="com_qq_e_download" />
+
+         <!-- ADCDN下载配置-->
+         <external-path
+             name="external_storage_root"
+             path="." />
 </paths>
 ```
 为了适配下载和安装相关功能，在工程中引用包 com.android.support:support-v4:24.2.0 使用24.2.0以及以上版本
@@ -519,15 +525,15 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 广告sdk内部混淆，若您项目需要进行混淆则需要在混淆文件中添加以下配置
 
 
--dontwarn com.yunxia.adsdk.**
+-dontwarn com.adcdn.adsdk.**
 
--keep class com.yunxia.adsdk.**{*;}
+-keep class com.adcdn.adsdk.**{*;}
 
--keep interface com.yunxia.adsdk.**{*;}
+-keep interface com.adcdn.adsdk.**{*;}
 
 -keep class com.android.**{*;}
 
--keep class com.yunxia.adsdk.admobhttp.**{	*;	}
+-keep class com.adcdn.adsdk.admobhttp.**{	*;	}
 
 -keep class com.jaredrummler.android.processes.**{*;}
 
