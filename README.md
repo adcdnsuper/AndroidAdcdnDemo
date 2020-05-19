@@ -43,7 +43,7 @@ android {
 *确保所使用的 support:recyclerview-v7，如果不包含此方法请升级 android 开发套件
 *确保所使用的 android-support-v4.jar 包中的 android.support.v4.app.NotificationCompat.Builder 类包含 setProgress 方法，如果不包含此方法请升级 android 开发套件
 
-### 3.2权限申请
+### 3.2 权限申请
 使用sdk时可能需要以下权限，为了保证使用广告的正确，请在6.0以及以上的手机中使用sdk前及时申请
 ```
 <uses-permission android:name="android.permission.INTERNET" />
@@ -61,6 +61,68 @@ android {
  <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
 ```
 PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NETWORK_STATE̵ACCESS_WIFI_STATE这几个权限请确保获取，否则可能无法获取广告 （可参考Demo中的SplashActivity）
+
+### 3.3 适配Android7.0
+如果您的应用需要适配7.0以上，请在AndroidManifest中添加以下代码：
+```
+       
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/adcdn_file_paths" />
+        </provider>
+      
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+            android:authorities="${applicationId}.TTFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/adcdn_file_paths" />
+        </provider>
+
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+            android:authorities="${applicationId}.TTMultiProvider"
+            android:exported="false" />
+
+
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+```
+** 注意：各个平台的provider在需要是添加，不需要时移除掉，否则会出现异常
+在res/xml目录下，新建一个XML文件ﬁle_paths,在该文件中添加如下代码：
+```
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 头条下载配置-->
+    <external-files-path
+        name="external_files_path"
+        path="Download" />
+    <!-- 腾讯下载配置-->
+      <external-cache-path
+             name="gdt_sdk_download_path1"
+             path="com_qq_e_download" />
+         <cache-path
+             name="gdt_sdk_download_path2"
+             path="com_qq_e_download" />
+
+         <!-- ADCDN下载配置-->
+         <external-path
+             name="external_storage_root"
+             path="." />
+</paths>
+```
+为了适配下载和安装相关功能，在工程中引用包 com.android.support:support-v4:24.2.0 使用24.2.0以及以上版本
+
 ## 4. 接入代码
 ### 4.1 sdk初始化
 提示：appid请联系商务获取，并在Application的onCreat()方法中进行SDK初始化
@@ -466,68 +528,8 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 注意事项：
 在不使用的时候（退出activity等）记得及时释放广告资源
 
-## 5.适配Android7.0
-如果您的应用需要适配7.0以上，请在AndroidManifest中添加以下代码：
-```
-       
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/adcdn_file_paths" />
-        </provider>
-      
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
-            android:authorities="${applicationId}.TTFileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/adcdn_file_paths" />
-        </provider>
 
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
-            android:authorities="${applicationId}.TTMultiProvider"
-            android:exported="false" />
-
-
-
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
-```
-** 注意：各个平台的provider在需要是添加，不需要时移除掉，否则会出现异常
-在res/xml目录下，新建一个XML文件ﬁle_paths,在该文件中添加如下代码：
-```
-<?xml version="1.0" encoding="utf-8"?>
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- 头条下载配置-->
-    <external-files-path
-        name="external_files_path"
-        path="Download" />
-    <!-- 腾讯下载配置-->
-      <external-cache-path
-             name="gdt_sdk_download_path1"
-             path="com_qq_e_download" />
-         <cache-path
-             name="gdt_sdk_download_path2"
-             path="com_qq_e_download" />
-
-         <!-- ADCDN下载配置-->
-         <external-path
-             name="external_storage_root"
-             path="." />
-</paths>
-```
-为了适配下载和安装相关功能，在工程中引用包 com.android.support:support-v4:24.2.0 使用24.2.0以及以上版本
-
-## 6. 混淆配置
+## 5. 混淆配置
 广告sdk内部混淆，若您项目需要进行混淆则需要在混淆文件中添加以下配置
 
 
@@ -610,7 +612,7 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 -keep class com.ss.sys.ces.* {*;}
 
 
-## 7. 常见问题
+## 6. 常见问题
 get ad ﬁled 广告未放量，请联系商务
 
 platams is empty 广告渠道未接入，请联系商务
