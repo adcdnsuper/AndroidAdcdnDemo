@@ -607,8 +607,6 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 -keep class com.ss.sys.ces.* {*;}
 
 
-
-
 ## 7. 常见问题
 get ad ﬁled 广告未放量，请联系商务
 
