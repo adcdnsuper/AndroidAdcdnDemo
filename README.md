@@ -1,6 +1,8 @@
-# ADCDN广告接入说明文档
+# ADCDN ANDROID广告接入说明文档
 ## 1.概述
 尊敬的开发者朋友，欢迎您使用ADCDN广告sdk平台。通过本文档，您可以轻松的在几分钟之内完成广告的集成过程。
+## 2.接入iOS请跳转以下链接
+[接入IOS ADCDN SDK](https://github.com/adcdnsuper/iOSAdcdnDemo)
 ## 3.SDK接入流程
 ### 3.1 添加sdk到工程
 接入环境：Androidstudio
@@ -141,7 +143,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
         adcdnBannerView.loadAd();
 ```
 
-### 4.5 原生模板广告示例
+### 4.4 原生模板广告示例
 ```
  adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plcId");
         adcdnNativeExpressView.setAdCount(3);//请求广告的数量（1~3），最多一次请求3个广告
@@ -202,7 +204,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ```
 
 
-### 4.6 插屏广告示例
+### 4.5 插屏广告示例
 ```
  adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this,"请填写对应的plcId");
         adcdnInsertView.setListener(new AdcdnInsertitailAdListener() {
@@ -245,7 +247,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
         });
         adcdnInsertView.loadAd();
 ```
-### 4.7 激励视屏广告示例
+### 4.6 激励视屏广告示例
 ```
  AdVideoSlot adSlot = new AdVideoSlot.Builder()
                 .setCodeId("请填写对应的plcId")
@@ -319,7 +321,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
                     }
                 });
 ```
-#### 4.7.1 服务器到服务器回调(可选)
+#### 4.6.1 服务器到服务器回调(可选)
 服务器到服务器回调让您判定是否提供奖励给观看广告的用户。当用户成功看完广告时，您可以在ADCDN平台配置从ADCDN服务器到您自己的服务器的回调链接，以通知您用户完成了操作。
 
 **回调方式说明**
@@ -357,7 +359,7 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 ```
 
 
-### 4.8 全屏视屏广告示例
+### 4.7 全屏视屏广告示例
 ```
  //activity,位置id，期望视频方向(横屏AdcdnFullVideoView.HORIZONTAL，竖屏AdcdnFullVideoView.VERTICAL)
    adcdnFullVideoView = new AdcdnFullVideoView(this, "请填写对应的plcId",AdcdnFullVideoView.VERTICAL);
@@ -418,7 +420,7 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
                  });
 ```
 
-### 4.9 游戏盒子接入示例
+### 4.8 游戏盒子接入示例
 ```
 //注意：目前游戏盒子只支持anrdoid 5.0或以上
 
