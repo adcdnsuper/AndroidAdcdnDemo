@@ -608,41 +608,6 @@ isValid | 校验结果 | bool | 判定结果，是否发放奖励|
 
 
 
-#adView
-
--keepclassmembers class * {public *;}
-
--keep public class com.kyview.** {*;}
-
--keep public class com.kuaiyou.** {*;}
-
-#百度sdk
-
--keepclassmembers class * extends android.app.Activity	{public void *(android.view.View);}
-
--keepclassmembers enum *	{public static **[]	values();
-public static ** valueOf(java.lang.String);}
-
--keep class com.baidu.mobads.*.**{*;}
-
-#360
-
--keep class com.ak.** {*;}
-
--keep class android.support.v4.** {
-    public *;
-}
-
-#小米
-
--keep class com.xiaomi.ad.** {*;}
-
--keep class com.miui.zeus.**{*;}
-
-#谷歌
-
--keep class com.google.android.gms.** {*;}
-
 ## 7. 常见问题
 get ad ﬁled 广告未放量，请联系商务
 
