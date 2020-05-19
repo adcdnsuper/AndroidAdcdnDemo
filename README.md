@@ -23,6 +23,8 @@ android {
    ....
    //2.添加依赖包
      //必须的依赖包
+      implementation 'com.android.support:support-v4:28.0.0'
+      implementation 'com.android.support:recyclerview-v7:28.0.0'
  implementation(name:	'adcdnsdk_7.0_20200515',	ext:	'aar')
  implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
@@ -35,6 +37,7 @@ android {
 **注意事项
 
 *如果项目中集成了重复的其他广告平台sdk尽量移除避免冲突
+*确保所使用的 support:recyclerview-v7，如果不包含此方法请升级 android 开发套件
 *确保所使用的 android-support-v4.jar 包中的 android.support.v4.app.NotificationCompat.Builder 类包含 setProgress 方法，如果不包含此方法请升级 android 开发套件
 
 ### 3.2权限申请
