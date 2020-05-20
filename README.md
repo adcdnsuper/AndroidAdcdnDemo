@@ -1,7 +1,7 @@
 # <div align='center' ><font size='70'>ADCDN SDK for Android</font></div>
 
 ## 1.概述
-尊敬的开发者朋友，欢迎您使用ADCDN广告sdk平台。通过本文档，您可以轻松的在几分钟之内完成广告的集成过程。
+尊敬的开发者朋友，欢迎您使用ADCDN广告平台sdk。通过本文档，您可以轻松的在几分钟之内完成广告的集成过程。
 ## 2.接入iOS请跳转以下链接
 [接入IOS ADCDN SDK](https://github.com/adcdnsuper/iOSAdcdnDemo)
 ## 3.SDK接入流程
