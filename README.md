@@ -10,29 +10,27 @@
 可以复制Demo中libs文件目录下的依赖包到项目中。
 ```java
 android {
- ....
- defaultConfig {
- ...
-  multiDexEnabled true//方法数量超量需要设置
- }
+        defaultConfig {
+            multiDexEnabled true//方法数量超量需要设置
+        }
  //.添加依赖目录
- repositories {
-   flatDir {
-     dirs 'libs'
-   }
-   }
+        repositories {
+            flatDir {
+                dirs 'libs'
+            }
+        }
  }
-   dependencies {
+ dependencies {
    ....
    //2.添加依赖包
-     //必须的依赖包
+   //必须的依赖包
       implementation 'com.android.support:support-v4:28.0.0'
       implementation 'com.android.support:recyclerview-v7:28.0.0'
       implementation(name:	'adcdnsdk_7.0_20200515',	ext:	'aar')
       implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
       implementation(name:	'GDTSDK.unionNormal.4.110.980',	ext:	'aar')
       implementation(name:	'open_ad_sdk',	ext:	'aar')
-
+}
 
 
 ```
@@ -65,36 +63,36 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
 如果您的应用需要适配7.0以上，请在AndroidManifest中添加以下代码：
 ```xml
        
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/adcdn_file_paths" />
-        </provider>
-      
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
-            android:authorities="${applicationId}.TTFileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/adcdn_file_paths" />
-        </provider>
+ <provider
+     android:name="android.support.v4.content.FileProvider"
+     android:authorities="${applicationId}.fileprovider"
+     android:exported="false"
+     android:grantUriPermissions="true">
+     <meta-data
+         android:name="android.support.FILE_PROVIDER_PATHS"
+         android:resource="@xml/adcdn_file_paths" />
+ </provider>
+ 
+ <provider
+     android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+     android:authorities="${applicationId}.TTFileProvider"
+     android:exported="false"
+     android:grantUriPermissions="true">
+     <meta-data
+         android:name="android.support.FILE_PROVIDER_PATHS"
+         android:resource="@xml/adcdn_file_paths" />
+ </provider>
 
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
-            android:authorities="${applicationId}.TTMultiProvider"
-            android:exported="false" />
+ <provider
+     android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+     android:authorities="${applicationId}.TTMultiProvider"
+     android:exported="false" />
 
 
 
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
+ <uses-library
+     android:name="org.apache.http.legacy"
+     android:required="false" />
 ```
 ** 注意：各个平台的provider在需要是添加，不需要时移除掉，否则会出现异常
 在res/xml目录下，新建一个XML文件ﬁle_paths,在该文件中添加如下代码：
@@ -135,74 +133,74 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
 1.开屏广告默认为屏幕高度的100%，可自定义高度比例，但不能低于0.75
 2.注意加载开屏广告时，请保证开屏view控件处于可见状态，否则会出现获取不到广告的情况
 ```java
-        adcdnSplashView = new AdcdnSplashView(this, "请填写对应的plcId", flContainer);
-        adcdnSplashView.setListener(new AdcdnSplashAdListener() {
-            @Override
-            public void onADExposure() {
-                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-            }
+ adcdnSplashView = new AdcdnSplashView(this, "请填写对应的plcId", flContainer);
+ adcdnSplashView.setListener(new AdcdnSplashAdListener() {
+     @Override
+     public void onADExposure() {
+         Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+     }
 
-            @Override
-            public void onADFailed(String error) {
-                Log.e(TAG, "广告获取失败了 ::::: " + error);
-            }
+     @Override
+     public void onADFailed(String error) {
+         Log.e(TAG, "广告获取失败了 ::::: " + error);
+     }
 
-            @Override
-            public void onADReceiv() {
-                Log.e(TAG, "广告获取成功了 ::::: ");
-            }
+     @Override
+     public void onADReceiv() {
+         Log.e(TAG, "广告获取成功了 ::::: ");
+     }
 
-            @Override
-            public void onADClick() {
-                Log.e(TAG, "广告被点击了 ::::: ");
-            }
+     @Override
+     public void onADClick() {
+         Log.e(TAG, "广告被点击了 ::::: ");
+     }
 
-            @Override
-            public void onAdClose() {
-                Log.e(TAG, "广告被关闭了 ::::: ");
-            }
-        });
-        flContainer.addView(adcdnSplashView);
-        adcdnSplashView.loadAd();
+     @Override
+     public void onAdClose() {
+         Log.e(TAG, "广告被关闭了 ::::: ");
+     }
+ });
+ flContainer.addView(adcdnSplashView);
+ adcdnSplashView.loadAd();
 ```
 ### 4.3 banner广告示例
 Banner广告控件容器保证不低于50dp，建议使用自适应
 ```java
- // 初始化Banner广告
-        adcdnBannerView = new AdcdnBannerView(this,"请填写对应的plcId");
-        // 不设置banner广告尺寸大小则默认比例为: 640*100;
-		//adMobGenBannerView.setADSize(640,100);
-        // 设置广告监听（不设置也行）
-        adcdnBannerView.setListener(new AdcdnBannerAdListener() {
-            @Override
-            public void onADExposure() {
-                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-            }
+  // 初始化Banner广告
+  adcdnBannerView = new AdcdnBannerView(this,"请填写对应的plcId");
+  // 不设置banner广告尺寸大小则默认比例为: 640*100;
+  //adMobGenBannerView.setADSize(640,100);
+  // 设置广告监听（不设置也行）
+  adcdnBannerView.setListener(new AdcdnBannerAdListener() {
+      @Override
+      public void onADExposure() {
+          Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+      }
 
-            @Override
-            public void onADFailed(String s) {
-                Log.e(TAG, "广告获取失败了 ::::: " + s);
-            }
+      @Override
+      public void onADFailed(String s) {
+          Log.e(TAG, "广告获取失败了 ::::: " + s);
+      }
 
-            @Override
-            public void onADReceiv() {
-                Log.e(TAG, "广告获取成功了 ::::: ");
-            }
+      @Override
+      public void onADReceiv() {
+          Log.e(TAG, "广告获取成功了 ::::: ");
+      }
 
-            @Override
-            public void onADClick() {
-                Log.e(TAG, "广告被点击了 ::::: ");
-            }
+      @Override
+      public void onADClick() {
+          Log.e(TAG, "广告被点击了 ::::: ");
+      }
 
-            @Override
-            public void onAdClose() {
-                Log.e(TAG, "广告被关闭了，改回调不一定会有 ::::: ");
-            }
-        });
-        // 把广告控件添加到容器
-        flContainer.addView(adcdnBannerView);
-        // 开始获取广告
-        adcdnBannerView.loadAd();
+      @Override
+      public void onAdClose() {
+          Log.e(TAG, "广告被关闭了，改回调不一定会有 ::::: ");
+      }
+  });
+  // 把广告控件添加到容器
+  flContainer.addView(adcdnBannerView);
+  // 开始获取广告
+  adcdnBannerView.loadAd();
 ```
 
 ### 4.4 原生模板广告示例
