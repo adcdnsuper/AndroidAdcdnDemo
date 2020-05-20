@@ -57,7 +57,10 @@ android {
 <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
  <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
 ```
-PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NETWORK_STATE̵ACCESS_WIFI_STATE这几个权限请确保获取，否则可能无法获取广告 （可参考Demo中的SplashActivity）
+PS:ACCESS_FINE_LOCATION，
+   READ_PHONE_STATE，
+   WRITE_EXTERNAL_STORAGE，
+   这几个权限请确保获取，否则可能无法获取广告 （可参考Demo中的SplashActivity）
 
 ### 3.3 适配Android7.0
 如果您的应用需要适配7.0以上，请在AndroidManifest中添加以下代码：
