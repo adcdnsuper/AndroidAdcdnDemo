@@ -66,7 +66,7 @@ android {
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> 
 <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" /> 
 <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
- <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
+<uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
 ```
 PS:ACCESS_FINE_LOCATION，
    READ_PHONE_STATE，
