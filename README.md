@@ -28,11 +28,10 @@ android {
      //必须的依赖包
       implementation 'com.android.support:support-v4:28.0.0'
       implementation 'com.android.support:recyclerview-v7:28.0.0'
- implementation(name:	'adcdnsdk_7.0_20200515',	ext:	'aar')
- implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
-
- implementation(name:	'GDTSDK.unionNormal.4.110.980',	ext:	'aar')
- implementation(name:	'open_ad_sdk',	ext:	'aar')
+      implementation(name:	'adcdnsdk_7.0_20200515',	ext:	'aar')
+      implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+      implementation(name:	'GDTSDK.unionNormal.4.110.980',	ext:	'aar')
+      implementation(name:	'open_ad_sdk',	ext:	'aar')
 
 
 
@@ -108,17 +107,17 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
         name="external_files_path"
         path="Download" />
     <!-- 腾讯下载配置-->
-      <external-cache-path
-             name="gdt_sdk_download_path1"
-             path="com_qq_e_download" />
-         <cache-path
-             name="gdt_sdk_download_path2"
-             path="com_qq_e_download" />
+    <external-cache-path
+       name="gdt_sdk_download_path1"
+       path="com_qq_e_download" />
+    <cache-path
+        name="gdt_sdk_download_path2"
+        path="com_qq_e_download" />
 
-         <!-- ADCDN下载配置-->
-         <external-path
-             name="external_storage_root"
-             path="." />
+    <!-- ADCDN下载配置-->
+    <external-path
+         name="external_storage_root"
+         path="." />
 </paths>
 ```
 为了适配下载和安装相关功能，在工程中引用包 com.android.support:support-v4:24.2.0 使用24.2.0以及以上版本
