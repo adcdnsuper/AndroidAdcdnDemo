@@ -127,7 +127,7 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
 ### 4.1 sdk初始化
 提示：appid请联系商务获取，并在Application的onCreat()方法中进行SDK初始化
 
-```
+```java
 // TODO: 2018/10/22 修改为自己的appId
      AdcdnMobSDK.instance().initSdk(getApplicationContext(), APP_ID);
 ```
@@ -497,85 +497,47 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ## 5. 混淆配置
 广告sdk内部混淆，若您项目需要进行混淆则需要在混淆文件中添加以下配置
 
-
+```java
 -dontwarn com.adcdn.adsdk.**
-
 -keep class com.adcdn.adsdk.**{*;}
-
 -keep interface com.adcdn.adsdk.**{*;}
-
 -keep class com.android.**{*;}
-
 -keep class com.adcdn.adsdk.admobhttp.**{	*;	}
-
 -keep class com.jaredrummler.android.processes.**{*;}
-
 -keep class com.jaredrummler.android.processes.models.**{*;}
-
 -keep class it.sauronsoftware.base64.**{*;}
-
 -dontwarn org.apache.commons.**
-
 -keep class org.apache.**{	*;	}
-
 -ignorewarnings
-
 -dontnote android.net.http.*
-
 -dontnote org.apache.commons.codec.**
-
 -dontnote org.apache.http.**
-
 #webview + js
-
 -keepattributes *JavascriptInterface*
-
 -keepattributes *Annotation*
-
 #广点通sdk
-
 -keep class com.qq.e.**	{public protected *;}
-
 -keep class android.support.v4.**{public *;}
-
 -keep class android.support.v7.**{public *;}
-
 -keep class MTT.ThirdAppInfoNew	{*;}
-
 -keep class com.tencent.**	{*;}
-
 -dontwarn com.androidquery.**
-
 -keep class com.androidquery.** { *;}
-
 -dontwarn tv.danmaku.**
-
 -keep class tv.danmaku.** { *;}
-
 -dontwarn androidx.**
-
 #头条 穿山甲 sdk
-
 -keep class com.bytedance.sdk.openadsdk.**	{	*;	}
-
 -keep class com.androidquery.callback.**	{*;}
-
 -keep class com.bytedance.sdk.openadsdk.service.TTDownloadProvider
-
 -keep class com.androidquery.auth.TwitterHandle.**	{	*;	}
-
 -keep class com.androidquery.**	{*;}
-
 -keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
-
 -keep class com.bytedance.sdk.openadsdk.** {*;}
-
 -keep class com.androidquery.callback.** {*;}
-
 -keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
-
 -keep class com.ss.sys.ces.* {*;}
-
+```
 
 ## 6. 常见问题
 get ad ﬁled 广告未放量，请联系商务
