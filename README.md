@@ -8,7 +8,7 @@
 ### 3.1 添加sdk到工程
 接入环境：Androidstudio
 可以复制Demo中libs文件目录下的依赖包到项目中。
-```
+```java
 android {
  ....
  defaultConfig {
@@ -45,7 +45,7 @@ android {
 
 ### 3.2 权限申请
 使用sdk时可能需要以下权限，为了保证使用广告的正确，请在6.0以及以上的手机中使用sdk前及时申请
-```
+```xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
@@ -64,7 +64,7 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
 
 ### 3.3 适配Android7.0
 如果您的应用需要适配7.0以上，请在AndroidManifest中添加以下代码：
-```
+```xml
        
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -99,7 +99,7 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
 ```
 ** 注意：各个平台的provider在需要是添加，不需要时移除掉，否则会出现异常
 在res/xml目录下，新建一个XML文件ﬁle_paths,在该文件中添加如下代码：
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -135,7 +135,7 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
 提示：
 1.开屏广告默认为屏幕高度的100%，可自定义高度比例，但不能低于0.75
 2.注意加载开屏广告时，请保证开屏view控件处于可见状态，否则会出现获取不到广告的情况
-```
+```java
         adcdnSplashView = new AdcdnSplashView(this, "请填写对应的plcId", flContainer);
         adcdnSplashView.setListener(new AdcdnSplashAdListener() {
             @Override
@@ -168,7 +168,7 @@ PS:ACCESS_COARSE_LOCATION̵READ_PHONE_STATE̵WRITE_EXTERNAL_STORAGE̵ ACCESS_NET
 ```
 ### 4.3 banner广告示例
 Banner广告控件容器保证不低于50dp，建议使用自适应
-```
+```java
  // 初始化Banner广告
         adcdnBannerView = new AdcdnBannerView(this,"请填写对应的plcId");
         // 不设置banner广告尺寸大小则默认比例为: 640*100;
@@ -207,7 +207,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ```
 
 ### 4.4 原生模板广告示例
-```
+```java
  adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plcId");
         adcdnNativeExpressView.setAdCount(3);//请求广告的数量（1~3），最多一次请求3个广告
         //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
@@ -268,7 +268,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 
 
 ### 4.5 插屏广告示例
-```
+```java
  adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this,"请填写对应的plcId");
         adcdnInsertView.setListener(new AdcdnInsertitailAdListener() {
             @Override
@@ -311,7 +311,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
         adcdnInsertView.loadAd();
 ```
 ### 4.6 激励视屏广告示例
-```
+```java
  AdVideoSlot adSlot = new AdVideoSlot.Builder()
                 .setCodeId("请填写对应的plcId")
                 .setSupportDeepLink(true)
@@ -383,11 +383,11 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
                         adcdnVideoView.showAd();
                     }
                 });
-
+``` 
 
 
 ### 4.7 全屏视屏广告示例
-```
+```java
  //activity,位置id，期望视频方向(横屏AdcdnFullVideoView.HORIZONTAL，竖屏AdcdnFullVideoView.VERTICAL)
    adcdnFullVideoView = new AdcdnFullVideoView(this, "请填写对应的plcId",AdcdnFullVideoView.VERTICAL);
          // 设置广告监听（不设置也行）
@@ -448,7 +448,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ```
 
 ### 4.8 游戏盒子接入示例
-```
+```java
 //注意：目前游戏盒子只支持anrdoid 5.0或以上
 
      AdGameBoxSlot adSlot = new AdGameBoxSlot.Builder()
