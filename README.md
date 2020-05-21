@@ -291,13 +291,11 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 
      @Override
      public void onADFailed(String s) {
-      
          Log.e(TAG, "广告获取失败了 ::::: " + s);
      }
 
      @Override
      public void onADReceiv() {
-        
          Log.e(TAG, "广告获取成功了 ::::: ");
      }
 
