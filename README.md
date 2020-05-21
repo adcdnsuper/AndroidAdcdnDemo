@@ -245,14 +245,11 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
             @Override
             public void onRenderSuccess(View view) {
                 Log.e(TAG, "广告渲染成功 ::::: ");
-//                Toast.makeText(NativeExpressActivity.this, "广告下载成功", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
             public void onADError(String error) {
                 Toast.makeText(NativeExpressActivity.this, "广告下载失败" + error, Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
@@ -263,7 +260,6 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
             @Override
             public void onClicked(View view) {
                 Log.e(TAG, "广告被点击了 ::::: ");
-
             }
 
             @Override
