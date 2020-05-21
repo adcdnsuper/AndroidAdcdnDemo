@@ -1,7 +1,7 @@
 # <div align='center' ><font size='70'>ADCDN SDK for Android</font></div>
 
 ## 1.概述
-尊敬的开发者朋友，欢迎您使用ADCDN广告平台sdk。通过本文档，您可以轻松的在几分钟之内完成广告的集成过程。
+通过本文档，您可以轻松的在几分钟之内完成广告的集成过程。
 
 ADCDN广告SDK支持如下广告功能:
 
@@ -550,11 +550,6 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 -keep class com.ss.sys.ces.* {*;}
 ```
 
-
-## 6. 常见问题
-get ad ﬁled 广告未放量，请联系商务
-
-platams is empty 广告渠道未接入，请联系商务
 
 
 
