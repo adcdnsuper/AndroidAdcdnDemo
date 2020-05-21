@@ -1,7 +1,6 @@
 <p align="center">
 <img src="https://github.com/pengshuangta/images/blob/master/adcdn_icon.png">
 </p>
-
 <h1 align="center">ADCDN SDK for Android</h1>
 
 ## 1.概述
