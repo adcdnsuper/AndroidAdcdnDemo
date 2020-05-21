@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/pengshuangta/images/blob/master/adcdn_icon.png">
+<img src="https://github.com/pengshuangta/images/blob/master/adcdn_logo.png">
 </p>
 <h1 align="center">ADCDN SDK for Android</h1>
 
