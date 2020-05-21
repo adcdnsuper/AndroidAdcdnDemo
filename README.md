@@ -102,8 +102,6 @@ PS:ACCESS_FINE_LOCATION，
      android:authorities="${applicationId}.TTMultiProvider"
      android:exported="false" />
 
-
-
  <uses-library
      android:name="org.apache.http.legacy"
      android:required="false" />
@@ -220,8 +218,8 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ### 4.4 原生模板广告示例
 ```java
  adcdnNativeExpressView = new AdcdnNativeExpressView(this, "请填写对应的plcId");
-        adcdnNativeExpressView.setAdCount(3);//请求广告的数量（1~3），最多一次请求3个广告
-        //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
+ adcdnNativeExpressView.setAdCount(3);//请求广告的数量（1~3），最多一次请求3个广告
+ //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
  adcdnNativeExpressView.loadAd(new AdcdnNativeExpressAdListener() {
 
             @Override
@@ -272,54 +270,52 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
             public void onAdClose(View view) {
 
             }
-
-
         });
 ```
 
 
 ### 4.5 插屏广告示例
 ```java
- adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this,"请填写对应的plcId");
-        adcdnInsertView.setListener(new AdcdnInsertitailAdListener() {
-            @Override
-            public void onADExposure() {
-                Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-            }
+  adcdnInsertView = new AdcdnInsertView(InterstitialActivity.this,"请填写对应的plcId");
+  adcdnInsertView.setListener(new AdcdnInsertitailAdListener() {
+      @Override
+      public void onADExposure() {
+          Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
+      }
 
-            @Override
-            public void onADOpen() {
-                Log.e(TAG, "广告打开成功了 ::::: ");
-            }
+      @Override
+      public void onADOpen() {
+          Log.e(TAG, "广告打开成功了 ::::: ");
+      }
 
-            @Override
-            public void onADLeftApplication() {
-                Log.e(TAG, "广告onADLeftApplication ::::: ");
-            }
+      @Override
+      public void onADLeftApplication() {
+          Log.e(TAG, "广告onADLeftApplication ::::: ");
+      }
 
-            @Override
-            public void onADFailed(String s) {
-             
-                Log.e(TAG, "广告获取失败了 ::::: " + s);
-            }
+      @Override
+      public void onADFailed(String s) {
+       
+          Log.e(TAG, "广告获取失败了 ::::: " + s);
+      }
 
-            @Override
-            public void onADReceiv() {
-               
-                Log.e(TAG, "广告获取成功了 ::::: ");
-            }
+      @Override
+      public void onADReceiv() {
+         
+          Log.e(TAG, "广告获取成功了 ::::: ");
+      }
 
-            @Override
-            public void onADClick() {
-                Log.e(TAG, "广告被点击了 ::::: ");
-            }
+      @Override
+      public void onADClick() {
+          Log.e(TAG, "广告被点击了 ::::: ");
+      }
 
-            @Override
-            public void onAdClose() {
-                Log.e(TAG, "广告被关闭了，改回调不一定会有 ::::: ");
-            }
-        });
-        adcdnInsertView.loadAd();
+      @Override
+      public void onAdClose() {
+          Log.e(TAG, "广告被关闭了，改回调不一定会有 ::::: ");
+      }
+  });
+  adcdnInsertView.loadAd();
 ```
 ### 4.6 激励视屏广告示例
 ```java
@@ -334,8 +330,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
                 .setOrientation(AdcdnVideoView.VERTICAL) //必填参数，期望视频的播放方向：AdcdnVideoView.HORIZONTAL 或 AdcdnVideoView.VERTICAL
                 .build();
  adcdnVideoView = new AdcdnVideoView(this, adSlot);
-    adcdnVideoView.setListener(new AdcdnVideoAdListener() {
-  
+ adcdnVideoView.setListener(new AdcdnVideoAdListener() {
               @Override
               public void onVideoDownloadSuccess() {
                   Log.e(TAG, "广告下载完成了 ::::: ");
@@ -380,14 +375,14 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
               }
           });
 
-//下载点击按钮
+        //下载点击按钮
           btnLoad.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         adcdnVideoView.loadAd();
                     }
                 });
-//展示广告点击按钮
+        //展示广告点击按钮
           btnShow.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -399,57 +394,11 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 
 ### 4.7 全屏视屏广告示例
 ```java
- //activity,位置id，期望视频方向(横屏AdcdnFullVideoView.HORIZONTAL，竖屏AdcdnFullVideoView.VERTICAL)
-   adcdnFullVideoView = new AdcdnFullVideoView(this, "请填写对应的plcId",AdcdnFullVideoView.VERTICAL);
-         // 设置广告监听（不设置也行）
-         adcdnFullVideoView.setListener(new AdcdnVideoFullAdListener() {
- 
-             @Override
-             public void onAdShow() {
-                 Log.e(TAG, "广告展示曝光回调，但不一定是曝光成功了，比如一些网络问题导致上报失败 ::::: ");
-             }
- 
-             @Override
-             public void onAdVideoBarClick() {
-                 Log.e(TAG, "广告被点击了 ::::: ");
-             }
- 
-             @Override
-             public void onAdClose() {
-                 Log.e(TAG, "广告被关闭了，该回调不一定会有 ::::: ");
-             }
- 
-             @Override
-             public void onVideoComplete() {
-                 Log.e(TAG, "广告播放完成 ::::: ");
-             }
- 
-             @Override
-             public void onSkippedVideo() {
-                 Log.e(TAG, "广告被跳过了 ::::: ");
-             }
- 
-             @Override
-             public void onFullScreenVideoCached() {
-                 Log.e(TAG, "广告下载完成了 ::::: ");
-             }
- 
-             @Override
-             public void onError(String s) {
-                 Log.e(TAG, "广告加载失败了 ::::: " + s);
-             }
- 
- 
-         });
-
-//下载点击按钮
-           btnLoad.setOnClickListener(new View.OnClickListener() {
-                      @Override
-                      public void onClick(View view) {
+ /View view) {
                           adcdnFullVideoView.loadAd();
                       }
                   });
-//展示广告点击按钮
+        //展示广告点击按钮
           btnShow.setOnClickListener(new View.OnClickListener() {
                      @Override
                      public void onClick(View view) {
@@ -497,7 +446,6 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
         adcdnGameAdView.destroy();//注意要在 super.onDestroy()之前调用
         super.onDestroy();
     }
-
     
 ```
 
