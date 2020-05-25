@@ -27,7 +27,6 @@ public class BannerActivity extends Activity {
     private TTAdNative ttAdNative;
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +35,7 @@ public class BannerActivity extends Activity {
 
         // 初始化Banner广告
         adcdnBannerView = new AdcdnBannerView(this, Constant.AD_BANNER);
-        // 不设置banner广告尺寸大小则默认比例为: 640*100;
-//        adcdnBannerView.setADSize(w,h);//期望模板广告view的size,单位dp
+        adcdnBannerView.setRefreshTime(30);//刷新广告频率，区间30s·120s，单位s
         // 设置广告监听（不设置也行）
         adcdnBannerView.setListener(new AdcdnBannerAdListener() {
             @Override

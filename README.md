@@ -183,8 +183,7 @@ Banner广告控件容器保证不低于50dp，建议使用自适应
 ```java
   // 初始化Banner广告
   adcdnBannerView = new AdcdnBannerView(this,"请填写对应的plcId");
-  // 不设置banner广告尺寸大小则默认比例为: 640*100;
-  //adMobGenBannerView.setADSize(640,100);
+  adcdnBannerView.setRefreshTime(30);//刷新广告频率，区间30s·120s，单位s
   // 设置广告监听（不设置也行）
   adcdnBannerView.setListener(new AdcdnBannerAdListener() {
       @Override
