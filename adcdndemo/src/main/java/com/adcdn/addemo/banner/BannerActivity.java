@@ -18,7 +18,6 @@ import com.yunxia.addemo.R;
  * @author : xnn
  * @date : 2018/6/28
  * @description : Banner广告获取demo
- *
  */
 
 public class BannerActivity extends Activity {
