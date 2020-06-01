@@ -60,7 +60,7 @@ public class BannerActivity extends Activity {
 
             @Override
             public void onAdClose() {
-                Log.e(TAG, "广告被关闭了，改回调不一定会有 ::::: ");
+                Log.e(TAG, "广告被关闭了，该回调不一定会有 ::::: ");
             }
         });
         // 把广告控件添加到容器
