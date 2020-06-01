@@ -9,7 +9,7 @@ import com.adcdn.adsdk.configsdk.common.AdcdnMobSDK;
 /**
  * @author : xnn
  * @date : 2019/5/5
- * @description : replace your description
+ * @description :
  */
 
 public class MyApplication extends Application {
