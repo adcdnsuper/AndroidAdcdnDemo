@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.adcdn.addemo.banner.BannerActivity;
-import com.adcdn.addemo.gamebox.GameCenterActivity;
 import com.adcdn.addemo.nativead.NativeExpressActivity;
 import com.adcdn.addemo.splash.SplashActivity2;
 import com.adcdn.addemo.video.FullVideoActivity;
 import com.adcdn.addemo.video.VideoActivity;
+import com.adcdn.adsdk.configsdk.common.AdcdnMobSDK;
 import com.yunxia.addemo.R;
 import com.adcdn.addemo.interstitial.InterstitialActivity;
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
                     Toast.makeText(MainActivity.this, "不支持低版本，仅支持android 5.0或以上版本!", Toast.LENGTH_LONG).show();
                 } else {
-                    GameCenterActivity.jumpHere(MainActivity.this);
+                    AdcdnMobSDK.instance().gameBox.startIntent(MainActivity.this);
                 }
             }
         });

@@ -19,6 +19,17 @@ ADCDN广告SDK支持如下广告功能:
 ## 2.接入iOS请跳转以下链接
 [接入IOS ADCDN SDK](https://github.com/adcdnsuper/iOSAdcdnDemo)
 ## 3.SDK接入流程
+### 3.0 兼容和历史版本
+android5.0及以上，最新版本号：V 7.2.0。
+
+| 版本号        | 更新内容 | 更新时间 |
+| --------       | -----   |----- |
+| V7.0.0        |   新增游戏盒子变现场景      |2020-05-15|
+| V7.0.1        | 优化游戏盒子的加载速度         |2020-05-18|
+| V7.0.2        | 适配了V4.11.8的优量汇版本横幅广告加载crash问题，原因：横幅广告初始化方法V4.11.8之后废弃了之前的初始化方法         |2020-05-19|
+| V7.0.3        | 1、提供根据版本号关闭游戏场景入口的方法；2、优化初始化失败重试方案；3、修复优量汇横幅广告轮播问题        |2020-05-25
+| V7.2.0        |  优化游戏盒子页面和内容增加添加到桌面快捷方式的入口，去除原先游戏盒子view的集成方式，改成跳转的方式       |2020-06-17
+
 ### 3.1 添加sdk到工程
 接入环境：Androidstudio
 可以复制Demo中libs文件目录下的依赖包到项目中。
@@ -452,41 +463,16 @@ adcdnFullVideoView.setListener(new AdcdnVideoFullAdListener() {
 ```java
 //注意：目前游戏盒子只支持anrdoid 5.0或以上
 
-     AdGameBoxSlot adSlot = new AdGameBoxSlot.Builder()
-             .setImmersive(true)//是否需要沉浸式状态栏显示游戏盒子
-             .setExistNav(true)//是否游戏盒子需要右上角退出按钮
-             .build();
-     adcdnGameAdView = new AdcdnGameBox(this, adSlot);
-     adcdnGameAdView.loadWebView();
-     flContainer.addView(adcdnGameAdView);
-        
-     int scenesSwitch = AdcdnMobSDK.instance().getScenesSwitch();//如果不等于1，说明游戏盒子被关闭，可以在外部路口隐藏游戏盒子
-    
-    //注意需要在onActivityResult设置以下，否则无法调用头像拍照
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        adcdnGameAdView.setOnActivityResult(requestCode, resultCode, data);
-    }
-          
-    //注意：如果需要在activity的onBackPressed()调用以下方法来处理内部H5页面的物理返回按钮
-    @Override
-    public void onBackPressed() {
-        if (adcdnGameAdView == null) {
-            finish();
-        } else {
-            if (!adcdnGameAdView.backWebview()) {
-                adcdnGameAdView.showBackDialog();//这里调用弹框确认是否退出，不要确认的话直接调用finish();
-            }
-        }
-    }
-    
-    @Override
-    protected void onDestroy() {
-        // 释放广告资源
-        adcdnGameAdView.destroy();//注意要在 super.onDestroy()之前调用
-        super.onDestroy();
-    }
+     findViewById(R.id.tvScene).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                        Toast.makeText(MainActivity.this, "不支持低版本，仅支持android 5.0或以上版本!", Toast.LENGTH_LONG).show();
+                    } else {
+                        AdcdnMobSDK.instance().gameBox.startIntent(MainActivity.this);
+                    }
+                }
+            });
 ```
 
 注意事项：

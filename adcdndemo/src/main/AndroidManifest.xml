@@ -44,9 +44,6 @@
             android:screenOrientation="portrait"
             />
         <activity
-            android:name="com.adcdn.addemo.gamebox.GameCenterActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.adcdn.addemo.MainActivity"
             android:screenOrientation="portrait" />
         <activity
