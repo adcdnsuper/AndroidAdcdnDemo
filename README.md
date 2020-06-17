@@ -53,7 +53,7 @@ android {
       implementation 'com.android.support:recyclerview-v7:28.0.0'
       implementation(name:'adcdnsdk_7.0_20200515',ext:'aar')
       implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
-      implementation(name:'GDTSDK.unionNormal.4.110.980',ext:'aar')
+      implementation(name:'GDTSDK.unionNormal.4.210.1080',ext:'aar')
       implementation(name:'open_ad_sdk',ext:'aar')
 }
 
