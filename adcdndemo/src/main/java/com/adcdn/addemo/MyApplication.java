@@ -14,13 +14,12 @@ import com.adcdn.adsdk.configsdk.common.AdcdnMobSDK;
 
 public class MyApplication extends Application {
 
-    private String APP_ID = "600009";
 
     @Override
     public void onCreate() {
         super.onCreate();
         // TODO: 2019/5/5 修改为自己的appId
-        AdcdnMobSDK.instance().initSdk(getApplicationContext(), APP_ID);
+        AdcdnMobSDK.instance().initSdk(getApplicationContext(), Constant.APPID);
         AdcdnLogTool.isNeedShow = true;//日志开关，测试的时候可以打开
 
     }
