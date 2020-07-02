@@ -59,7 +59,7 @@ android {
 
 
 ```
-###### 注意事项
+##### 注意事项
 
 *如果项目中集成了重复的其他广告平台sdk尽量移除避免冲突，确保所使用的 support:recyclerview-v7，如果不包含此方法请升级 android 开发套件，确保所使用的 android-support-v4.jar 包中的 android.support.v4.app.NotificationCompat.Builder 类包含 setProgress 方法，如果不包含此方法请升级 android 开发套件
 
