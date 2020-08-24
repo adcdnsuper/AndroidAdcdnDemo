@@ -17,7 +17,7 @@ import com.bytedance.sdk.openadsdk.TTAdSdk;
 /**
  * @author : xnn
  * @date : 2019/5/5
- * @description :
+ * @description :45
  */
 
 public class MyApplication extends Application {
