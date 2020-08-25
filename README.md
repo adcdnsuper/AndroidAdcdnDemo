@@ -20,7 +20,7 @@ ADCDN广告SDK支持如下广告功能:
 [接入IOS ADCDN SDK](https://github.com/adcdnsuper/iOSAdcdnDemo)
 ## 3.SDK接入流程
 ### 3.0 兼容和历史版本
-android5.0及以上，最新版本号：V 7.2.0。
+android5.0及以上，最新版本号：V 8.1.2。
 
 | 版本号        | 更新内容 | 更新时间 |
 | --------       | -----   |----- |
