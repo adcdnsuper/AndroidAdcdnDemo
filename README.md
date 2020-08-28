@@ -24,6 +24,7 @@ android5.0及以上，最新版本号：V 8.1.2 .
 
 | 版本号        | 更新内容 | 更新时间 |
 | --------       | -----   |----- |
+| V8.2.0        |  优化sdk，提高视频加载速度       |2020-08-28|
 | V8.1.2        |  优化sdk，提高游戏盒子广告变现能力       |2020-08-12|
 | V7.2.0        |  优化游戏盒子页面和内容增加添加到桌面快捷方式的入口，去除原先游戏盒子view的集成方式，改成跳转的方式       |2020-06-17|
 | V7.0.3        | 1、提供根据版本号关闭游戏场景入口的方法；2、优化初始化失败重试方案；3、修复优量汇横幅广告轮播问题        |2020-05-25|
@@ -470,7 +471,7 @@ adcdnFullVideoView.setListener(new AdcdnVideoFullAdListener() {
                     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
                         Toast.makeText(MainActivity.this, "不支持低版本，仅支持android 5.0或以上版本!", Toast.LENGTH_LONG).show();
                     } else {
-                        AdcdnMobSDK.instance().gameBox.startIntent(MainActivity.this);
+                        AdcdnMobSDK.instance().gameBox.startIntent(MainActivity.this,"userId");//如果没有userId可不传
                     }
                 }
             });
