@@ -55,8 +55,8 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
         });
 
 
-        adcdnNativeExpressView = new AdcdnNativeExpressView(this,  Constant.AD_NATIVE_3IMG);
-        adcdnNativeExpressView.setAdCount(1);//请求广告的数量（1~3），最多一次请求3个广告
+        adcdnNativeExpressView = new AdcdnNativeExpressView(this, Constant.AD_NATIVE_3IMG);
+        adcdnNativeExpressView.setAdCount(3);//请求广告的数量（1~3），最多一次请求3个广告
         //adcdnNativeExpressView.setADSize(new MyADSize(MyADSize.FULL_WIDTH, MyADSize.AUTO_HEIGHT));//可选，单位dp
         loadAd();
     }
@@ -111,6 +111,7 @@ public class NativeExpressActivity extends Activity implements RadioGroup.OnChec
 
             @Override
             public void onAdClose(View view) {
+                Log.e(TAG, "广告被关闭了 ::::: ");
 
             }
 
