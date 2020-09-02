@@ -199,7 +199,7 @@
             android:background="#fff"
             android:elevation="5dp"
             android:gravity="center"
-            android:text="游戏大厅" />
+            android:text="营销场景" />
 
     </LinearLayout>
 </RelativeLayout>
