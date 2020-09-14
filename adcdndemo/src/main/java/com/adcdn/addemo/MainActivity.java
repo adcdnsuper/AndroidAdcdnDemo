@@ -18,7 +18,6 @@ import com.adcdn.addemo.interstitial.InterstitialActivity;
 
 /**
  * 首页
- *
  */
 public class MainActivity extends AppCompatActivity {
 
