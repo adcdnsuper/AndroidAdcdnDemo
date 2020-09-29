@@ -161,6 +161,7 @@ PS:ACCESS_FINE_LOCATION，
 提示：
 1.开屏广告默认为屏幕高度的100%，可自定义高度比例，但不能低于0.75
 2.注意加载开屏广告时，请保证开屏view控件处于可见状态，否则会出现获取不到广告的情况
+3.开屏容器的布局高度不要写0dp或者wrap_content，建议用match_parent，否则会出现不显示广告的情况
 ```java
  adcdnSplashView = new AdcdnSplashView(this, "请填写对应的plcId", flContainer);
  adcdnSplashView.setListener(new AdcdnSplashAdListener() {
