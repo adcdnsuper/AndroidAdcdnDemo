@@ -67,6 +67,8 @@ android {
 ```
 ##### 注意事项
 
+*请保持接入的穿山甲和优量汇的sdk和demo中的保持一直，避免出现兼容问题
+
 *如果项目中集成了重复的其他广告平台sdk尽量移除避免冲突，确保所使用的 support:recyclerview-v7，如果不包含此方法请升级 android 开发套件，确保所使用的 android-support-v4.jar 包中的 android.support.v4.app.NotificationCompat.Builder 类包含 setProgress 方法，如果不包含此方法请升级 android 开发套件
 
 *广告拉取失败，禁止多次重试请求广告，避免请求量消耗过大，导致填充率过低，影响系统对您流量的评价从而影响变现效果，得不到广告收益。
