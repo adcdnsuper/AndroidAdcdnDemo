@@ -109,6 +109,16 @@ PS:ACCESS_FINE_LOCATION，
          android:name="android.support.FILE_PROVIDER_PATHS"
          android:resource="@xml/adcdn_file_paths" />
  </provider>
+
+   <provider
+             android:name="com.qq.e.comm.GDTFileProvider"
+             android:authorities="${applicationId}.gdt.fileprovider"
+             android:exported="false"
+             android:grantUriPermissions="true">
+             <meta-data
+                 android:name="android.support.FILE_PROVIDER_PATHS"
+                 android:resource="@xml/gdt_file_path" />
+         </provider>
  
  <provider
      android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
