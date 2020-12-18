@@ -53,7 +53,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void initAd() {
-
+        Log.e(TAG, "开始请求 ::::: ");
         adcdnSplashView = new AdcdnSplashView(this, Constant.AD_SPLASH, flContainer);
 //        adcdnSplashView = new AdcdnSplashView(this, "1000379", flContainer);
         adcdnSplashView.setListener(new AdcdnSplashAdListener() {

@@ -55,6 +55,7 @@ public class SplashActivity2 extends AppCompatActivity{
     }
 
     private void initAd() {
+        Log.e(TAG, "开始请求 ::::: ");
         adcdnSplashView = new AdcdnSplashView(this,  Constant.AD_SPLASH, flContainer);
         adcdnSplashView.setListener(new AdcdnSplashAdListener() {
             @Override
