@@ -492,7 +492,7 @@ adcdnFullVideoView.setListener(new AdcdnVideoFullAdListener() {
                     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
                         Toast.makeText(MainActivity.this, "不支持低版本，仅支持android 5.0或以上版本!", Toast.LENGTH_LONG).show();
                     } else {
-                        AdcdnMobSDK.instance().gameBox.startIntent(MainActivity.this,"userId");//如果没有userId可不传
+                        AdcdnMobSDK.instance().startGameBox(MainActivity.this,"");//如果没有userId可不传
                     }
                 }
             });
