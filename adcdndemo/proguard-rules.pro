@@ -41,4 +41,7 @@
 -keep class com.androidquery.callback.** {*;}
 -keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
 -keep class com.ss.sys.ces.* {*;}
+-dontpreverify
+
+
 

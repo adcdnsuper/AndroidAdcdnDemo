@@ -53,7 +53,8 @@ android {
 
         }
         debug {
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable true  //启用debug的buildType配置
         }
     }
